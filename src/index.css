@@ -1,10 +1,36 @@
+@font-face {
+  font-family: fredoka-semi-bold;
+  src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-SemiBold.ttf);
+}
+@font-face {
+  font-family: fredoka-bold;
+  src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Bold.ttf);
+}
+@font-face {
+  font-family: fredoka-medium;
+  src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Medium.ttf);
+}
+@font-face {
+  font-family: fredoka-regular;
+  src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Regular.ttf);
+}
+
+@font-face {
+  font-family: fredoka-light;
+  src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Light.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: fredoka-regular;
+}
+
+html, #root{
+  font-family: fredoka-regular;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, li, ol, input, textarea {
+  direction: rtl;
 }
 
 code {

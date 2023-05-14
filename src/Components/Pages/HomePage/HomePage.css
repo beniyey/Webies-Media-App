@@ -1,0 +1,17 @@
+.HomePage .top-banner-text {
+  line-height: 20px;
+}
+.HomePage .top-banner-text p:nth-of-type(1) {
+  font-family: fredoka-bold;
+  font-size: 50px;
+}
+.HomePage .top-banner-text p:nth-of-type(2) {
+  font-family: fredoka-light;
+  font-size: 50px;
+}
+.HomePage .top-banner-text p:nth-of-type(2) span {
+  font-family: fredoka-semi-bold;
+}
+.HomePage .top-banner-text p:nth-of-type(3) {
+  font-size: 25px;
+}/*# sourceMappingURL=HomePage.css.map */
