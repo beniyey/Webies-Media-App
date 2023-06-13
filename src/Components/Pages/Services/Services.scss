@@ -1,0 +1,278 @@
+.Services {
+    max-width: 2000px;
+    margin: 0% auto;
+
+    .internal-section-spacer {
+        margin-bottom: 40px;
+    }
+
+    .top-floater {
+        padding-top: 150px;
+        width: clamp(200px, 80%, 100%);
+        margin: auto;
+        min-height: 100vh;
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'image image'
+            'text text'
+        ;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .top-floater-image {
+        grid-area: image;
+        width: clamp(200px, 100%, 600px);
+    }
+
+    .top-floater-text {
+        grid-area: text;
+        text-align: center;
+
+        * {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .services-wrapper {
+        margin-top: 40px;
+        text-align: center;
+
+        * {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .service-card {
+        background-image: linear-gradient(90deg, rgba(75, 40, 196, .9) 0%, rgba(139, 63, 174, .9) 100%);
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+        width: 100%;
+        h1 {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .services-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: clamp(200px, 80%, 100%);
+        gap: 20px;
+        grid-template-areas: 
+        'seo seo seo'
+        'design design design'
+        'social social social'
+        'maintaining maintaining maintaining'
+        ;
+    }
+
+    .service-card-background {
+        z-index: -1;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-size: cover;
+        background-position: center;
+        filter: blur(1.2px);
+    }
+
+    .service-card:nth-of-type(1) {
+        position: relative;
+        grid-area:seo;
+        .service-card-background {
+            background-image: url("../../../Assets/Images/backgrounds/seo.jpg");
+        }
+    }
+
+    .service-card:nth-of-type(2) {
+        grid-area:design;
+        position: relative;
+        .service-card-background {
+            background-image: url("../../../Assets/Images/backgrounds/web-developement.jpg");
+        }
+    }
+
+    .service-card:nth-of-type(3) {
+        grid-area:social;
+        position: relative;
+        .service-card-background {
+            background-image: url("../../../Assets/Images/backgrounds/social-media.jpg");
+        }
+    }
+
+    .service-card:nth-of-type(4) {
+        grid-area:maintaining;
+        position: relative;
+        .service-card-background {
+            background-image: url("../../../Assets/Images/backgrounds/maintanance.jpg");
+        }
+    }
+
+    @media only screen and(min-width:1100px) {
+        .top-floater {
+            margin-top: 0px;
+            grid-template-areas:
+                'image text'
+            ;
+        }
+
+        h1 {
+            white-space: nowrap;
+        }
+
+        .services-cards{
+            grid-template-areas: 
+            'seo seo design'
+            'social maintaining maintaining'
+            ;
+        }
+    }
+}
+
+
+
+
+
+
+// .Services{
+//     .top-floater{
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         position: relative;
+//         min-height: 100vh;
+//     }
+//     .top-floater-image{
+//       img{
+//         width: clamp(200px, 80%, 80%);
+//         aspect-ratio: 1/1;
+//       }
+//     }
+//     .top-floater-text{
+//         text-align: center;
+//         *{
+//             margin-left: auto;
+//             margin-right: auto;
+//         }
+//     }
+//     .data-section-content{
+//         line-height: 100%;
+//         margin-top: 40px;
+//         font-size: 17px;
+//     }
+//     .data-section-content-inner{
+//         font-family: fredoka-bold;
+//         color: #ff57a4 ;
+//         display: block;
+//         font-size: 20px;
+//         margin:10px auto;
+//     }
+//     .service-card{
+//         background-image: linear-gradient(90deg, rgba(75, 40, 196, .9) 0%, rgba(139, 63, 174, .9) 100%);
+//         text-align: center;
+//         padding: 40px;
+//         border-radius: 20px;
+//         gap: 20px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-around;
+//         h1{
+//             padding: 0;
+//             margin: 0;
+//         }
+//     }
+//     .services-cards{
+//         display: grid;
+//         grid-template-columns: repeat(30, 1fr);
+//         grid-template-rows: repeat(10, 1fr);
+//         *{
+//             color: white;
+//         }
+//     }
+
+//     .service-card-background{
+//         z-index: -1;
+//         border-radius: 20px;
+//         width: 100%;
+//         height: 100%;
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate(-50%, -50%);
+//         background-size: cover;
+//         background-position: center;
+//         filter: blur(1.2px);
+//     }
+
+//     .service-card:nth-of-type(1){
+//         position: relative;
+//         grid-column: 9/15;
+//         grid-row: 2/6;
+//         .service-card-background{
+//             background-image: url("../../../Assets/Images/backgrounds/seo.jpg");
+//         }
+//     }
+//     .service-card:nth-of-type(2){
+//         position: relative;
+//         grid-column: 16/26;
+//         grid-row: 2/5;
+//         .service-card-background{
+//             background-image: url("../../../Assets/Images/backgrounds/web-developement.jpg");
+//         }
+//     }
+//     .service-card:nth-of-type(3){
+//         position: relative;
+//         grid-column: 6/15;
+//         grid-row: 7/10;
+//         .service-card-background{
+//             background-image: url("../../../Assets/Images/backgrounds/social-media.jpg");
+//         }
+//     }
+//     .service-card:nth-of-type(4){
+//         position: relative;
+//         grid-column: 16/22;
+//         grid-row: 6/10;
+//         .service-card-background{
+//             background-image: url("../../../Assets/Images/backgrounds/maintanance.jpg");
+//         }
+//     }
+
+//     @media only screen and (max-width:"1050px") {
+//         .top-floater{
+//             display: flex;
+//             flex-direction: column;
+//         }
+//         .top-floater-image{
+//             height: 70vh;
+//         }
+//         .top-floater-text{
+//             position: relative;
+//             top: 0;
+//             left: 0;
+//             transform: none;
+//             padding: 10px;
+//             >*{
+//                 white-space: normal !important;
+//             }
+//         }
+//     }
+
+// }

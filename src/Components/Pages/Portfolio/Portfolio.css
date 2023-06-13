@@ -1,3 +1,131 @@
 .Portfolio {
-	
+  overflow: hidden;
 }
+.Portfolio .top-floater {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, rgba(75, 40, 196, 0.9) 0%, rgba(139, 63, 174, 0.9) 100%);
+}
+.Portfolio .pink-caption {
+  color: white;
+  background-color: #ff57a4;
+}
+.Portfolio .top-floater-bg-image {
+  background-image: url("../../../Assets/Images/resources/israel-andrade-YI_9SivVt_s-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.Portfolio .top-floater-background-left {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../Assets/Images/shapes/progress-bg-1.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  left: 30%;
+}
+.Portfolio .top-floater-background-right {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../Assets/Images/shapes/progress-bg-1-iverted.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  top: 47%;
+  left: 70%;
+}
+.Portfolio .top-floater-background-left-offset {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../Assets/Images/shapes/progress-bg-1.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  top: 53%;
+  left: 30%;
+}
+.Portfolio .top-floater-background-right-offset {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../Assets/Images/shapes/progress-bg-1-iverted.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  left: 70%;
+}
+.Portfolio .top-floater-image img {
+  width: clamp(200px, 80%, 80%);
+  aspect-ratio: 1/1;
+}
+.Portfolio .top-floater-text {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding-top: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.Portfolio .top-floater-text * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.Portfolio .data-section-content {
+  line-height: 100%;
+  margin-top: 40px;
+  font-size: 17px;
+}
+.Portfolio .data-section-content-inner {
+  font-family: fredoka-bold;
+  color: #ff57a4;
+  display: block;
+  font-size: 20px;
+  margin: 10px auto;
+}
+.Portfolio .arrow-down-icon {
+  color: #ff57a4;
+  font-size: 80px;
+  margin: 60px auto 0px;
+}
+.Portfolio .projects-wrapper {
+  padding-top: 100px;
+  width: clamp(300px, 90%, 1700px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.Portfolio .ProjectCard {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Portfolio .floater-shape {
+  display: none;
+}
+@media only screen and (min-width: 1100px) {
+  .Portfolio .floater-shape {
+    display: block;
+  }
+  .Portfolio .ProjectCard:nth-child(2n) {
+    margin-top: 150px;
+  }
+  .Portfolio .projects-wrapper {
+    padding: 100px;
+    width: clamp(360px, 90%, 1700px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 600px));
+    gap: 40px;
+  }
+}/*# sourceMappingURL=Portfolio.css.map */

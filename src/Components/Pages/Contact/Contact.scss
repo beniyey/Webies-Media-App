@@ -1,0 +1,106 @@
+.Contact {
+    min-height: 100vh;
+    text-align: center;
+    margin: auto;
+
+    .child {
+        width: 100%;
+    }
+
+    .formData {
+        padding-top: 100px;
+    }
+
+    .overlay {
+        height: 100%;
+        background-image: url("../../../Assets/Images/backgrounds/home-4-bubbled-bg.png");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 1;
+    }
+
+    h1 {
+        color: #42495b;
+        font-size: 30px;
+        margin: 0%;
+    }
+
+    form {
+        width: clamp(300px, 80%, 800px);
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name name"
+            "email email"
+            "subject subject"
+            "message message"
+        ;
+        grid-gap: 20px;
+
+        input,
+        textarea {
+            direction: rtl;
+            line-height: 40px;
+            border: none;
+            border-bottom: 1px solid #a4a4a4;
+            padding: 10px;
+            background-color: transparent;
+            width: 100%;
+            // width: 700px;
+        }
+
+        .input-div {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+
+            .error-span {
+                color: rgb(248, 56, 56);
+            }
+        }
+
+        .input-div:nth-of-type(1) {
+            grid-area: name;
+            ;
+        }
+
+        .input-div:nth-of-type(2) {
+            grid-area: email;
+        }
+
+        .input-div:nth-of-type(3) {
+            grid-area: subject;
+        }
+
+        .input-div:nth-of-type(4) {
+            grid-area: message;
+
+            textarea {
+                height: 200px;
+            }
+        }
+
+        button {
+            grid-column: span 2;
+        }
+    }
+
+    @media only screen and(min-width:1100px) {
+        padding-top: 0px;
+        .formData {
+            padding-top: 0px;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        form {
+            grid-template-areas:
+                "name email"
+                "subject subject"
+                "message message"
+            ;
+        }
+    }
+}

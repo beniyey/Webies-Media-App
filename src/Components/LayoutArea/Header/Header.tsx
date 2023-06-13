@@ -14,11 +14,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { styled } from "@mui/system";
+import { redirect, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ['בלוג', 'העבודות שלנו', 'שירותים', 'קצת עלינו', 'בית'];
+
+const navItems = [{ display: 'צור קשר', value: "contact" }, { display: 'העבודות שלנו', value: "portfolio" }, { display: 'שירותים', value: "services" }, { display: 'קצת עלינו', value: "about" }, { display: 'בית', value: "home" }];
 
 const styles = {
     toolBar: {
@@ -58,21 +60,30 @@ const NavigationButton = styled(Button)({
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
+    function navigateTo(path:string, event?:SyntheticEvent){
+        navigate(path)
+        document.querySelectorAll(".active-tab").forEach((element)=>element.classList.remove("active-tab"))
+        if (event){
+            (event.target as HTMLButtonElement).classList.add("active-tab")
+        }
+    }
+
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <img src={logo} alt="logo" />
+            <img onClick={()=>navigateTo("/home")} src={logo} alt="logo" />
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item.display} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                            <ListItemText onClick={(e)=>navigateTo(item.value,e)} primary={item.display} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -83,7 +94,7 @@ export default function Header() {
     const container = document.body;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box className="Header" sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar component="nav" sx={styles.appBar} elevation={0}>
                 <Toolbar sx={styles.toolBar}>
@@ -97,16 +108,16 @@ export default function Header() {
                         <MenuIcon />
                     </IconButton>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <img src={logo} alt="a pink logo of webies media" width="200px" />
+                        <img src={logo} style={{cursor:"pointer"}} onClick={()=>navigateTo("/home")} alt="a pink logo of webies media" width="200px" />
                     </Box>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{ whiteSpace:"nowrap" ,display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <NavigationButton key={item} sx={{ color: '#fff' }}>
-                                {item}
+                            <NavigationButton disableRipple onClick={(e)=>navigateTo(item.value, e)} key={item.display} sx={{ color: '#fff' }}>
+                                {item.display}
                             </NavigationButton>
                         ))}
                     </Box>
-                    <ContactButton sx={{ display: { xs: 'none', sm: 'flex' } }} variant="contained" href="#contained-buttons" endIcon={<ArrowForwardIosIcon />}>
+                    <ContactButton onClick={()=>navigateTo("contact")} sx={{ display: { xs: 'none', sm: 'flex' } }} variant="contained" href="#contained-buttons" endIcon={<ArrowForwardIosIcon />}>
                         <b>בואו נדבר</b>
                     </ContactButton>
                 </Toolbar>

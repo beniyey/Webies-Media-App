@@ -1,0 +1,42 @@
+.ProjectCard{
+    margin:  auto;
+    width: clamp(300px, 100%, 550px);
+    *{
+        object-fit: contain;
+    }
+    // text-align: right;
+    // align-items: flex-start;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .content{
+        width: 80%;
+        color: #42495b;
+        background-color: rgb(255,255,255, 0.9);
+        text-align: center;
+        padding-top: 34.5px;
+        padding-bottom: 34.5px;
+        margin: auto;
+        pointer-events: none;
+        opacity: 0;
+        span:nth-of-type(1){
+            font-family: fredoka-bold;
+            font-size:22px ;
+        }
+        span:nth-of-type(2){
+            color: #ff7200;
+        }
+    }
+    .content-parent{
+        width: 100%;
+        top: 60%;
+    }
+
+    .overlay{
+        width: 100%;
+        height: 100%;
+        z-index: 1100;
+    }
+}

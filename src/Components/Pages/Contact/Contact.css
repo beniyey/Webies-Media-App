@@ -1,0 +1,82 @@
+.Contact {
+  min-height: 100vh;
+  text-align: center;
+  margin: auto;
+}
+.Contact .child {
+  width: 100%;
+}
+.Contact .formData {
+  padding-top: 100px;
+}
+.Contact .overlay {
+  height: 100%;
+  background-image: url("../../../Assets/Images/backgrounds/home-4-bubbled-bg.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+.Contact h1 {
+  color: #42495b;
+  font-size: 30px;
+  margin: 0%;
+}
+.Contact form {
+  width: clamp(300px, 80%, 800px);
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name name" "email email" "subject subject" "message message";
+  grid-gap: 20px;
+}
+.Contact form input,
+.Contact form textarea {
+  direction: rtl;
+  line-height: 40px;
+  border: none;
+  border-bottom: 1px solid #a4a4a4;
+  padding: 10px;
+  background-color: transparent;
+  width: 100%;
+}
+.Contact form .input-div {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.Contact form .input-div .error-span {
+  color: rgb(248, 56, 56);
+}
+.Contact form .input-div:nth-of-type(1) {
+  grid-area: name;
+}
+.Contact form .input-div:nth-of-type(2) {
+  grid-area: email;
+}
+.Contact form .input-div:nth-of-type(3) {
+  grid-area: subject;
+}
+.Contact form .input-div:nth-of-type(4) {
+  grid-area: message;
+}
+.Contact form .input-div:nth-of-type(4) textarea {
+  height: 200px;
+}
+.Contact form button {
+  grid-column: span 2;
+}
+@media only screen and (min-width: 1100px) {
+  .Contact {
+    padding-top: 0px;
+  }
+  .Contact .formData {
+    padding-top: 0px;
+  }
+  .Contact h1 {
+    font-size: 60px;
+  }
+  .Contact form {
+    grid-template-areas: "name email" "subject subject" "message message";
+  }
+}/*# sourceMappingURL=Contact.css.map */

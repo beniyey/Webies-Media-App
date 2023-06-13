@@ -1,0 +1,39 @@
+.ProjectCard {
+  margin: auto;
+  width: clamp(300px, 100%, 550px);
+}
+.ProjectCard * {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.ProjectCard img {
+  width: 100%;
+  height: 100%;
+}
+.ProjectCard .content {
+  width: 80%;
+  color: #42495b;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding-top: 34.5px;
+  padding-bottom: 34.5px;
+  margin: auto;
+  pointer-events: none;
+  opacity: 0;
+}
+.ProjectCard .content span:nth-of-type(1) {
+  font-family: fredoka-bold;
+  font-size: 22px;
+}
+.ProjectCard .content span:nth-of-type(2) {
+  color: #ff7200;
+}
+.ProjectCard .content-parent {
+  width: 100%;
+  top: 60%;
+}
+.ProjectCard .overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 1100;
+}/*# sourceMappingURL=ProjectCard.css.map */

@@ -1,18 +1,140 @@
-.HomePage{
-    .top-banner-text{
+.HomePage {
+    .main-banner{
+        width: 100%;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        direction: rtl;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        box-shadow: 0px 0px 20px 30px #270B55;
+    }
+
+    .top-banner-text {
+        white-space: nowrap;
         line-height: 20px;
-        p:nth-of-type(1){
-            font-family:fredoka-bold;
+
+        p:nth-of-type(1) {
+            font-family: fredoka-bold;
             font-size: 50px;
         }
-        p:nth-of-type(2){
-            font-family:fredoka-light;
+
+        p:nth-of-type(2) {
+            font-family: fredoka-light;
             font-size: 50px;
-            span{
-                font-family:fredoka-semi-bold;
+
+            span {
+                font-family: fredoka-semi-bold;
             }
         }
-        p:nth-of-type(3){
+
+        p:nth-of-type(3) {
             font-size: 25px;
-        }    }
+        }
+    }
+
+    .brand-image{
+        transition: 500ms;
+        opacity: 0.4;
+    }
+    
+    .brand-image:hover{
+        transition: 500ms;
+        opacity: 1;
+    }
+
+    .pink-caption{
+        margin: 0% auto;
+    }
+    .what-we-do-summary{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: clamp(360px,80%,100%);
+        margin: 100px auto;
+    }
+    .data-section-content{
+        margin-top: 60px;
+        font-size: 19px;
+    }
+    .data-section-content-inner{
+        font-family: fredoka-semi-bold;
+    }
+    .bouncing-img{
+        width: clamp(200px, 80%, 80%);
+        aspect-ratio: 1/1;
+        animation: localBounce 5s ease-in-out 0s infinite alternate;
+        margin-top: 50px;
+    }
+
+    .data-section-parent{
+        margin-top: 60px;
+    }
+    .data-section{
+        margin-top: 100px;
+    }
+    .portfolio-summary-parent{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        width: clamp(360px,80%,100%);
+        margin:100px auto 50px;
+    }
+    .parent{
+        position: relative;
+        width: 100%;
+    }
+    .child{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .main-banner-content{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+    }
+
+
+    @media only screen and (max-width:"1050px"){
+        .what-we-do-summary{
+            flex-direction: column;
+            align-items: center;
+        }
+        .data-section-content{
+            text-align: center;
+        }
+        .portfolio-summary-parent{
+            flex-direction: column;
+            align-items: center;
+        }
+        .data-section{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .main-banner{
+            display: flex;
+            background-position:right;
+        }
+        .top-banner-text {
+            white-space: normal;
+            line-height: 4rem;
+            position: relative;
+            top: none;
+            left: none;
+            width: 100%;
+            transform: none;
+        }
+    }
 }
