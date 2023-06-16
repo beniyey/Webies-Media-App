@@ -25,10 +25,10 @@ function About(): JSX.Element {
     return (
         <div className="About">
             <div className="top-floater">
-                <div className="top-floater-image parent">
-                    <img src={AboutFloater} className="child" alt="floating image of our team" />
-                </div>
-                <div className="parent">
+                {/* <div className="top-floater-image"> */}
+                    <img className="top-floater-image" src={AboutFloater} alt="floating image of our team" />
+                {/* </div> */}
+                <div className="">
                     <div className="top-floater-text">
                         <div className="pink-caption">
                             <p>קצת עלינו</p>

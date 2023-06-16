@@ -1,0 +1,20 @@
+.BrandCarousel {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: clamp(200px, 80%, 900px);
+  overflow: hidden;
+  gap: 80px;
+  transition: 700ms ease;
+}
+.BrandCarousel .brand-image {
+  width: 78px;
+  transition: 500ms;
+  opacity: 0.4;
+}
+.BrandCarousel .brand-image:hover {
+  transition: 500ms;
+  opacity: 1;
+}/*# sourceMappingURL=BrandCarousel.css.map */

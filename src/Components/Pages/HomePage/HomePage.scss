@@ -1,5 +1,5 @@
 .HomePage {
-    .main-banner{
+    .main-banner {
         width: 100%;
         min-height: 100vh;
         background-repeat: no-repeat;
@@ -35,98 +35,135 @@
         }
     }
 
-    .brand-image{
-        transition: 500ms;
-        opacity: 0.4;
-    }
-    
-    .brand-image:hover{
-        transition: 500ms;
-        opacity: 1;
-    }
-
-    .pink-caption{
+    .pink-caption {
         margin: 0% auto;
     }
-    .what-we-do-summary{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: clamp(360px,80%,100%);
+
+    .what-we-do-summary {
+        display: grid;
+        width: clamp(200px, 80%, 100%);
         margin: 100px auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "maintain seo design"
+        ;
+        gap: 40px;
     }
-    .data-section-content{
+
+    .HomePageServiceCard:nth-of-type(1) {
+        grid-area: maintain;
+    }
+
+    .HomePageServiceCard:nth-of-type(2) {
+        grid-area: seo;
+    }
+
+    .HomePageServiceCard:nth-of-type(3) {
+        grid-area: design;
+    }
+
+    .data-section-content {
         margin-top: 60px;
         font-size: 19px;
     }
-    .data-section-content-inner{
+
+    .data-section-content-inner {
         font-family: fredoka-semi-bold;
     }
-    .bouncing-img{
-        width: clamp(200px, 80%, 80%);
-        aspect-ratio: 1/1;
+
+    .bouncing-img {
+        margin: auto;
+        width: clamp(200px, 90%, 90%);
+        aspect-ratio: 1/0.8;
         animation: localBounce 5s ease-in-out 0s infinite alternate;
-        margin-top: 50px;
+        align-self: center;
     }
 
-    .data-section-parent{
+    .data-section-parent {
         margin-top: 60px;
     }
-    .data-section{
-        margin-top: 100px;
+
+    .data-section {
+        // margin-top: 100px;
     }
-    .portfolio-summary-parent{
+
+    .portfolio-summary-parent {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 40px;
-        width: clamp(360px,80%,100%);
-        margin:100px auto 50px;
+        width: clamp(200px, 80%, 100%);
+        margin: 100px auto 50px;
     }
-    .parent{
+
+    .parent {
         position: relative;
         width: 100%;
     }
-    .child{
+
+    .child {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
-    .main-banner-content{
+    .main-banner-content {
         position: absolute;
         top: 45%;
         left: 50%;
         width: 100%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         text-align: center;
         color: white;
     }
 
+    .project-summary{
+        width: clamp(200px, 100%, 290px);
+    }
 
-    @media only screen and (max-width:"1050px"){
-        .what-we-do-summary{
-            flex-direction: column;
-            align-items: center;
-        }
-        .data-section-content{
-            text-align: center;
-        }
-        .portfolio-summary-parent{
-            flex-direction: column;
-            align-items: center;
-        }
-        .data-section{
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-        }
+    .portfolio-image{
+        width: 100%;
+        aspect-ratio: 1/0.85;
+    }
+
+
+    @media only screen and (max-width:1100px) {
         .main-banner{
-            display: flex;
-            background-position:right;
+            background-position: left;
         }
+        .what-we-do-summary {
+            grid-template-areas:
+                'maintain maintain maintain'
+                'seo seo seo'
+                'design design design'
+            ;
+            *{
+                justify-content: center !important;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        .data-section-content {
+            padding:30px;
+            text-align: center;
+        }
+
+        .portfolio-summary-parent {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .data-section {
+            grid-template-columns: 1fr;
+        }
+
+        .main-banner {
+            display: flex;
+            background-position: right;
+        }
+
         .top-banner-text {
             white-space: normal;
             line-height: 4rem;
@@ -135,6 +172,30 @@
             left: none;
             width: 100%;
             transform: none;
+        }
+
+        .top-banner-text {
+            padding: 30px;
+            line-height: 1;
+
+            p:nth-of-type(1) {
+                font-family: fredoka-bold;
+                font-size: 50px;
+            }
+
+            p:nth-of-type(2) {
+                font-family: fredoka-light;
+                font-size: 50px;
+                margin: 0%;
+
+                span {
+                    font-family: fredoka-semi-bold;
+                }
+            }
+
+            p:nth-of-type(3) {
+                font-size: 25px;
+            }
         }
     }
 }

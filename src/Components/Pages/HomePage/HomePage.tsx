@@ -11,6 +11,7 @@ import havanaMockup from "../../../Assets/Images/portfolio/havana-mockup-1(1).jp
 import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.jpg"
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 
 const MainBannerWrapper = styled('div')({
     backgroundImage: `url(${mainBannerImg})`,
@@ -39,16 +40,7 @@ const MoreInfoButton = styled(Button)({
     }
 })
 
-let standardWidth = "clamp(360px,80%,100%)"
-
-const BrandCarousel = styled('div')({
-    display: "flex",
-    justifyContent: "space-around",
-    width: standardWidth,
-    margin: "100px auto",
-    overflow: "scroll",
-    gap: "40px",
-})
+let standardWidth = "clamp(200px,80%,100%)"
 
 const WhatWeDo = styled('div')({
     margin: "100px auto",
@@ -58,10 +50,13 @@ const WhatWeDo = styled('div')({
 
 const DataSection = styled('div')({
     margin: "auto",
-    width: "clamp(360px,90%,100%)",
+    width: "clamp(200px,90%,100%)",
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
+    gap: "20px",
     textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
 })
 
 const PortfolioSummary = styled('div')({
@@ -88,7 +83,6 @@ function HomePage(): JSX.Element {
 
 
     const options = {
-        root: document.querySelector("#scrollArea"),
         rootMargin: "0px",
         threshold: 0.25,
     }
@@ -137,41 +131,41 @@ function HomePage(): JSX.Element {
     }
 
     function animate(entry: any, isIntersecting = true) {
-        
+
         switch (entry.target) {
             case topBanner.current:
                 if (isIntersecting) {
                     topBanner.current.querySelector(".top-banner-text").classList.remove("animate__fadeOutDown");
                     topBanner.current.querySelector(".top-banner-text").classList.add("animate__fadeInUp");
-                }else{
+                } else {
                     topBanner.current.querySelector(".top-banner-text").classList.remove("animate__fadeInUp");
                     topBanner.current.querySelector(".top-banner-text").classList.add("animate__fadeOutDown");
                 }
                 break;
             case whatWeDo.current:
                 if (isIntersecting) {
-                    whatWeDo.current.querySelectorAll("div.HomePageServiceCard").forEach((el)=>{
+                    whatWeDo.current.querySelectorAll("div.HomePageServiceCard").forEach((el) => {
                         el.classList.add("animate__fadeInUp")
                         el.classList.remove("animate__fadeOut")
                     });
-                    whatWeDo.current.querySelectorAll("div.pink-caption").forEach((el)=>{
+                    whatWeDo.current.querySelectorAll("div.pink-caption").forEach((el) => {
                         el.classList.add("animate__fadeInUp")
                         el.classList.remove("animate__fadeOutUp")
                     });
-                    whatWeDo.current.querySelectorAll("h1").forEach((el)=>{
+                    whatWeDo.current.querySelectorAll("h1").forEach((el) => {
                         el.classList.add("animate__fadeIn")
                         el.classList.remove("animate__fadeOut")
                     });
-                }else{
-                    whatWeDo.current.querySelectorAll("div.HomePageServiceCard").forEach((el)=>{
+                } else {
+                    whatWeDo.current.querySelectorAll("div.HomePageServiceCard").forEach((el) => {
                         el.classList.remove("animate__fadeInUp")
                         el.classList.add("animate__fadeOut")
                     });
-                    whatWeDo.current.querySelectorAll("div.pink-caption").forEach((el)=>{
+                    whatWeDo.current.querySelectorAll("div.pink-caption").forEach((el) => {
                         el.classList.remove("animate__fadeInUp")
                         el.classList.add("animate__fadeOutUp")
                     });
-                    whatWeDo.current.querySelectorAll("h1").forEach((el)=>{
+                    whatWeDo.current.querySelectorAll("h1").forEach((el) => {
                         el.classList.remove("animate__fadeIn")
                         el.classList.add("animate__fadeOut")
                     });
@@ -204,9 +198,19 @@ function HomePage(): JSX.Element {
                 observer.observe(element.current)
             }
         })
-        setInterval(() => {
+        let carouselInterval = setInterval(() => {
             rotateCarousel()
         }, 2000)
+
+        return function cleanup() {
+            containersArr.forEach(element => {
+                if (element.current) {
+                    observer.unobserve(element.current)
+                }
+            })
+
+            clearInterval(carouselInterval)
+        }
 
     }, [])
 
@@ -225,11 +229,11 @@ function HomePage(): JSX.Element {
                     </MainBannerContent>
                 </MainBannerContentWrapper>
             </MainBannerWrapper>
-            <BrandCarousel ref={carousel}>
-                {[...Array(6)].map((el, i) => {
-                    return <img className="brand-image" key={i} alt={"an image of brand " + i} width={'78px'} src={require(`../../../Assets/Images/brand/brand-1-${i += 1}.png`)} />
-                })}
-            </BrandCarousel>
+
+            <div ref={carousel} className="brand-carousel">
+                <BrandCarousel />
+            </div>
+
             <WhatWeDo ref={whatWeDo}>
                 <div className="pink-caption animate__animated">
                     <p>מה אנחנו עושים?</p>
@@ -243,9 +247,8 @@ function HomePage(): JSX.Element {
                 </div>
             </WhatWeDo>
             <DataSection ref={aboutUs} className="data-section" >
-                <div>
-                    <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
-                </div>
+
+                <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
                 <div className="data-section-parent">
                     <div className="pink-caption">
                         <p>קצת עלינו</p>
@@ -287,9 +290,7 @@ function HomePage(): JSX.Element {
                         <br />
                         אנחנו נעמיד ברשותך כלים לבקרת ביצועי האתר שלך, ונעזור לך להבין את המשתמשים שלך ואת הפעילות שלהם באתר שלך, בשביל לספק להם בעתיד חווית משתמש טובה יותר, ולהגדיל את הכנסות העסק שלך                    </div>
                 </div>
-                <div>
-                    <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
-                </div>
+                <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
             </DataSection >
             <PortfolioSummary ref={topProjects}>
                 <div className="pink-caption">
@@ -299,13 +300,13 @@ function HomePage(): JSX.Element {
                 <span className="internal-section-spacer"></span>
                 <div className="portfolio-summary-parent">
                     <div className="project-summary">
-                        <img width={290} height={241} src={foodiesMockup} alt="" />
+                        <img className="portfolio-image" src={foodiesMockup} alt="" />
                     </div>
                     <div className="project-summary">
-                        <img width={290} height={241} src={havanaMockup} alt="" />
+                        <img className="portfolio-image" src={havanaMockup} alt="" />
                     </div>
                     <div className="project-summary">
-                        <img width={290} height={241} src={crispyMockup} alt="" />
+                        <img className="portfolio-image" src={crispyMockup} alt="" />
                     </div>
                 </div>
                 <PinkButton startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>

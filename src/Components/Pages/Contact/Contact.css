@@ -2,12 +2,10 @@
   min-height: 100vh;
   text-align: center;
   margin: auto;
+  margin-top: 150px;
 }
 .Contact .child {
   width: 100%;
-}
-.Contact .formData {
-  padding-top: 100px;
 }
 .Contact .overlay {
   height: 100%;
@@ -68,7 +66,7 @@
 }
 @media only screen and (min-width: 1100px) {
   .Contact {
-    padding-top: 0px;
+    margin-top: 0px;
   }
   .Contact .formData {
     padding-top: 0px;

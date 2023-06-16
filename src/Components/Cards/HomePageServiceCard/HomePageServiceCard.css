@@ -24,10 +24,6 @@
   border: 1px solid rgb(177, 177, 177);
   opacity: 0.5;
 }
-.HomePageServiceCard .service-card {
-  width: 300px;
-  height: 400px;
-}
 .HomePageServiceCard .upper-text {
   font-family: fredoka-semi-bold;
   font-size: 24px;
