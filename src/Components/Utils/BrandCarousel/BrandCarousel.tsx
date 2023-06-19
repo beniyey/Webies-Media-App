@@ -4,21 +4,6 @@ import "./BrandCarousel.css";
 function BrandCarousel(): JSX.Element {
     const wrapper = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const lastElement = wrapper.current.lastChild;
-
-        const interval = setInterval(() => {
-            const firstElement = wrapper.current.firstChild;
-            wrapper.current.removeChild(firstElement);
-            wrapper.current.appendChild(firstElement);
-        }, 3000);
-
-        return () => {
-            clearInterval(interval);
-            wrapper.current.appendChild(lastElement);
-        }
-    })
-
     return (
         <div ref={wrapper} className="BrandCarousel">
             {[...Array(10)].map((el, i) => {
