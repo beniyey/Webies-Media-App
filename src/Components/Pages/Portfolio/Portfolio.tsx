@@ -1,7 +1,7 @@
 import "./Portfolio.css";
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import { styled } from "@mui/system";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import projectsJSON from "../../Data/projects";
 import ProjectCard from "../../Cards/ProjectCard/ProjectCard";
 
@@ -9,7 +9,10 @@ const ArrowDownIcon = styled(KeyboardDoubleArrowDownIcon)({})
 
 function Portfolio(): JSX.Element {
 
+    const projectsWrapper = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
+        window.scrollTo(0, 0);
     }, [])
 
     return (
@@ -35,7 +38,7 @@ function Portfolio(): JSX.Element {
                 </div>
             </div>
 
-            <div className="projects-wrapper">
+            <div ref={projectsWrapper} className="projects-wrapper">
                 {
                     projectsJSON.length > 1 && projectsJSON.map((project: { name: string, category: string, img: string }, index: number) => {
                         return (

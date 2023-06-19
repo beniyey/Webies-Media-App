@@ -1,5 +1,5 @@
 
-import { SyntheticEvent, useRef } from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import "./ProjectCard.css";
 
 interface Project {
@@ -14,8 +14,9 @@ interface ProjectCardProps {
 }
 
 function ProjectCard(props: ProjectCardProps): JSX.Element {
-
+    const { scrollY } = window;
     const content = useRef<HTMLDivElement>(null);
+    const wrapper = useRef<HTMLDivElement>(null);
 
     function handleContentFloater(event:SyntheticEvent ,close: boolean = false) {
         if (close) {    
@@ -28,8 +29,9 @@ function ProjectCard(props: ProjectCardProps): JSX.Element {
         }
     }
 
+
     return (
-        <div className={`ProjectCard parent`}>
+        <div ref={wrapper} className={`ProjectCard parent`}>
                 <div className="child overlay" onMouseEnter={handleContentFloater} onMouseLeave={(event)=>{handleContentFloater(event, true)}}></div>
                 <img src={require("../../../Assets/Images/portfolio/" + props.projectObj.img)} />
                 <div  className="child content-parent">

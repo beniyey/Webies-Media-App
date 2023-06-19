@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import ArrowBackwardIosIcon from '@mui/icons-material/ArrowBackIosNew';
 import "./Contact.css";
 import Confetti from 'react-confetti'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SendButton = styled(Button)({
     margin: "20px auto",
@@ -26,6 +26,10 @@ function Contact(): JSX.Element {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showConfetti, setShowConfetti] = useState(false);
     const [pieces, setPieces] = useState(200);
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
 
     function send(data: any) {
         console.log(data);

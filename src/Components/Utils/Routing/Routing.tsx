@@ -8,7 +8,7 @@ import Services from "../../Pages/Services/Services";
 function Routing(): JSX.Element {
     return (
         <div className="Routing">
-			<Routes>
+            <Routes>
                 <Route path="*" element={<Navigate to="/home" />} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path={"/about"} element={<About />} />

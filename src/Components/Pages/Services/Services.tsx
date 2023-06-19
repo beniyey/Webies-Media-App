@@ -8,6 +8,7 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
+import { useEffect } from "react";
 
 const RightArrowIcon = styled(ArrowCircleRightIcon)({
     color: "#E95A9C",
@@ -39,6 +40,10 @@ const PinkButton = styled(Button)({
 });
 
 function Services(): JSX.Element {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
+
     return (
         <div className="Services">
             <div className="top-floater">

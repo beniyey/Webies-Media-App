@@ -193,6 +193,8 @@ function HomePage(): JSX.Element {
     }
 
     useEffect(() => {
+        
+        window.scrollTo(0, 0);
         containersArr.forEach((element, index) => {
             if (element.current) {
                 observer.observe(element.current)

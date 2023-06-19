@@ -3,6 +3,7 @@ import AboutFloater from "../../../Assets/Images/resources/photo-main-page.png"
 import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useEffect } from "react";
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -21,7 +22,11 @@ const PinkButton = styled(Button)({
     }
 })
 
+
 function About(): JSX.Element {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
     return (
         <div className="About">
             <div className="top-floater">
