@@ -14,9 +14,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import React, { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useEffect } from "react";
 import { styled } from "@mui/system";
-import { redirect, useNavigate } from "react-router-dom";
+import { redirect, useLocation, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -59,12 +59,27 @@ const NavigationButton = styled(Button)({
 })
 
 export default function Header() {
+    const location = useLocation()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
+
+    useEffect(()=>{
+        console.log("location changed ->",location.pathname)
+        toggleActive(location.pathname)
+    },[location])
+
+    function toggleActive(id:string){
+        //document.querySelectorAll(".active-tab").forEach((element)=>element.classList.remove("active-tab"))
+        let element = document.getElementById(id.substring(1))
+        if (element){
+            console.log(element)
+            element.classList.add("active-tab")
+        }
+    }
 
     function navigateTo(path:string, event?:SyntheticEvent){
         navigate(path)
@@ -81,8 +96,8 @@ export default function Header() {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item.display} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                    <ListItem  key={item.display} disablePadding>
+                        <ListItemButton className={item.value} sx={{ textAlign: 'center' }}>
                             <ListItemText onClick={(e)=>navigateTo(item.value,e)} primary={item.display} />
                         </ListItemButton>
                     </ListItem>
