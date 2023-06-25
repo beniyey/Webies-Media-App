@@ -13,13 +13,33 @@
         position: relative;
         direction: rtl;
         display: grid;
-        grid-template-columns: 40% 60%;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 100px;
         box-shadow: 0px 0px 20px 30px #270B55;
     }
 
+    .data-section {
+        margin: auto;
+        width: clamp(200px, 90%, 100%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-block: 50px;
+    }
+
     .top-banner-text {
+        width: fit-content;
         white-space: nowrap;
-        line-height: 0.5;
+        text-align: center;
+        line-height: .5;
+
+        p {
+            font-size: 25px;
+        }
 
         p:nth-of-type(1) {
             font-family: fredoka-bold;
@@ -35,9 +55,6 @@
             }
         }
 
-        p:nth-of-type(3) {
-            font-size: 25px;
-        }
     }
 
     .pink-caption {
@@ -123,27 +140,33 @@
         color: white;
     }
 
-    .project-summary{
+    .project-summary {
         width: clamp(200px, 100%, 290px);
     }
 
-    .portfolio-image{
+    .portfolio-image {
         width: 100%;
         aspect-ratio: 1/0.85;
     }
 
+    .contact-page {
+        margin-top: 100px;
+    }
+
 
     @media only screen and (max-width:1100px) {
-        .main-banner{
+        .main-banner {
             background-position: left;
         }
+
         .what-we-do-summary {
             grid-template-areas:
                 'maintain maintain maintain'
                 'seo seo seo'
                 'design design design'
             ;
-            *{
+
+            * {
                 justify-content: center !important;
                 align-items: center;
                 text-align: center;
@@ -151,7 +174,7 @@
         }
 
         .data-section-content {
-            padding:30px;
+            padding: 30px;
             text-align: center;
         }
 
