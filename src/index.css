@@ -18,17 +18,6 @@
   font-family: fredoka-light;
   src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Light.ttf);
 }
-@-webkit-keyframes localBounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 @keyframes localBounce {
   0% {
     transform: translateY(0);

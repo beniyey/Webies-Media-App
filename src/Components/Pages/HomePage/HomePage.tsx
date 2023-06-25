@@ -12,6 +12,7 @@ import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.j
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
+import Contact from "../Contact/Contact";
 
 const MainBannerWrapper = styled('div')({
     backgroundImage: `url(${mainBannerImg})`,
@@ -193,7 +194,7 @@ function HomePage(): JSX.Element {
     }
 
     useEffect(() => {
-        
+
         window.scrollTo(0, 0);
         containersArr.forEach((element, index) => {
             if (element.current) {
@@ -223,9 +224,13 @@ function HomePage(): JSX.Element {
                 <MainBannerContentWrapper sx={{ width: "inherit" }}>
                     <MainBannerContent className="main-banner-content">
                         <div className="animate__animated top-banner-text invisible">
-                            <p >גלו אופקים חדשים</p>
+                            {/* <p >גלו אופקים חדשים</p>
                             <p >לפיתוח העסק <span >שלכם</span> </p>
-                            <p>יחד עם סוכנות הדיגיטל שלנו</p>
+                            <p>יחד עם סוכנות הדיגיטל שלנו</p> */}
+                            <p >אנחנו Webies סוכנות דיגיטל</p>
+                            <p >ומיתוג לעסקים <span >ועצמאיים</span> </p>
+                            <p>ביחד נביא את החשיפה שלכם ברשת</p>
+                            <p>למיצוי מקסימלי, ועלייה בכמות הלקוחות\מכירות</p>
                             <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
                         </div>
                     </MainBannerContent>
@@ -248,7 +253,7 @@ function HomePage(): JSX.Element {
                     })}
                 </div>
             </WhatWeDo>
-            <DataSection ref={aboutUs} className="data-section" >
+            <div ref={aboutUs} className="data-section" >
 
                 <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
                 <div className="data-section-parent">
@@ -268,8 +273,8 @@ function HomePage(): JSX.Element {
                     </div>
 
                 </div>
-            </DataSection >
-            <DataSection ref={whatWeDoFloater} className="data-section" >
+            </div >
+            <div ref={whatWeDoFloater} className="data-section" >
                 <div className="data-section-parent">
                     <div className="pink-caption">
                         <p>מה אנחנו עושים</p>
@@ -293,7 +298,7 @@ function HomePage(): JSX.Element {
                         אנחנו נעמיד ברשותך כלים לבקרת ביצועי האתר שלך, ונעזור לך להבין את המשתמשים שלך ואת הפעילות שלהם באתר שלך, בשביל לספק להם בעתיד חווית משתמש טובה יותר, ולהגדיל את הכנסות העסק שלך                    </div>
                 </div>
                 <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
-            </DataSection >
+            </div >
             <PortfolioSummary ref={topProjects}>
                 <div className="pink-caption">
                     <p>כנסו והתרשמו</p>
@@ -314,6 +319,9 @@ function HomePage(): JSX.Element {
                 <PinkButton startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
             </PortfolioSummary>
 
+            <div className="contact-page">
+                <Contact />
+            </div>
         </div>
     );
 }

@@ -1,3 +1,9 @@
+.HomePageServiceCard * {
+  transition: 200ms ease;
+}
+.HomePageServiceCard :hover .main-text {
+  color: black;
+}
 .HomePageServiceCard .header {
   line-height: 22px;
   min-height: 70px;
