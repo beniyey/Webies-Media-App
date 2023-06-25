@@ -1,5 +1,10 @@
 .HomePage {
+    *{
+        max-width: 1500px;
+        margin-inline: auto;
+    }
     .main-banner {
+        max-width: none;
         width: 100%;
         min-height: 100vh;
         background-repeat: no-repeat;
@@ -14,7 +19,7 @@
 
     .top-banner-text {
         white-space: nowrap;
-        line-height: 20px;
+        line-height: 0.5;
 
         p:nth-of-type(1) {
             font-family: fredoka-bold;
@@ -73,7 +78,7 @@
 
     .bouncing-img {
         margin: auto;
-        width: clamp(200px, 90%, 90%);
+        width: clamp(200px, 90%, 700px);
         aspect-ratio: 1/0.8;
         animation: localBounce 5s ease-in-out 0s infinite alternate;
         align-self: center;
