@@ -8,7 +8,9 @@
         position: relative;
         direction: rtl;
         display: grid;
-        grid-template-columns: 40% 60%;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 100px;
         box-shadow: 0px 0px 20px 30px #270B55;
     }
 
@@ -25,8 +27,10 @@
     }
 
     .top-banner-text {
+        width: fit-content;
         white-space: nowrap;
-        line-height: 20px;
+        text-align: center;
+        line-height: .5;
 
         p {
             font-size: 25px;

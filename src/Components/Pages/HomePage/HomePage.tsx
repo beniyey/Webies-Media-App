@@ -224,13 +224,13 @@ function HomePage(): JSX.Element {
                 <MainBannerContentWrapper sx={{ width: "inherit" }}>
                     <MainBannerContent className="main-banner-content">
                         <div className="animate__animated top-banner-text invisible">
-                            {/* <p >גלו אופקים חדשים</p>
+                            <p >גלו אופקים חדשים</p>
                             <p >לפיתוח העסק <span >שלכם</span> </p>
-                            <p>יחד עם סוכנות הדיגיטל שלנו</p> */}
-                            <p >אנחנו Webies סוכנות דיגיטל</p>
+                            <p>יחד עם סוכנות הדיגיטל שלנו</p>
+                            {/* <p >אנחנו Webies סוכנות דיגיטל</p>
                             <p >ומיתוג לעסקים <span >ועצמאיים</span> </p>
                             <p>ביחד נביא את החשיפה שלכם ברשת</p>
-                            <p>למיצוי מקסימלי, ועלייה בכמות הלקוחות\מכירות</p>
+                            <p>למיצוי מקסימלי, ועלייה בכמות הלקוחות\מכירות</p> */}
                             <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
                         </div>
                     </MainBannerContent>
