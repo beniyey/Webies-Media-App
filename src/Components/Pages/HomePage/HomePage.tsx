@@ -184,7 +184,16 @@ function HomePage(): JSX.Element {
                 break;
             case topProjects.current:
                 if (isIntersecting) {
-                    topProjects.current.style.opacity = "1"
+                    console.log("intersecting", document.querySelectorAll(".project-summary"))
+                    document.querySelectorAll(".project-summary").forEach((el) => {
+                        el.classList.add("animate__fadeInRight")
+                        el.classList.remove("animate__fadeOutRight")
+                    })
+                }else{
+                    document.querySelectorAll(".project-summary").forEach((el) => {
+                        el.classList.remove("animate__fadeInRight")
+                        el.classList.add("animate__fadeOutRight")
+                    })
                 }
                 break;
             default:
@@ -224,9 +233,9 @@ function HomePage(): JSX.Element {
                 <MainBannerContentWrapper sx={{ width: "inherit" }}>
                     <MainBannerContent className="main-banner-content">
                         <div className="animate__animated top-banner-text invisible">
-                            <p >גלו אופקים חדשים</p>
-                            <p >לפיתוח העסק <span >שלכם</span> </p>
-                            <p>יחד עם סוכנות הדיגיטל שלנו</p>
+                            <p >פיתרונות דיגיטל מותאמים </p>
+                            <p >אישית <span >להגדלת</span> </p>
+                            <p>החשיפה של העסק שלכם</p>
                             {/* <p >אנחנו Webies סוכנות דיגיטל</p>
                             <p >ומיתוג לעסקים <span >ועצמאיים</span> </p>
                             <p>ביחד נביא את החשיפה שלכם ברשת</p>
@@ -299,20 +308,20 @@ function HomePage(): JSX.Element {
                 </div>
                 <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
             </div >
-            <PortfolioSummary ref={topProjects}>
+            <PortfolioSummary className="" ref={topProjects}>
                 <div className="pink-caption">
                     <p>כנסו והתרשמו</p>
                 </div>
                 <h1 style={{ fontSize: "50px" }}>הפרוייקטים המובילים שלנו</h1>
                 <span className="internal-section-spacer"></span>
                 <div className="portfolio-summary-parent">
-                    <div className="project-summary">
+                    <div className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={foodiesMockup} alt="" />
                     </div>
-                    <div className="project-summary">
+                    <div style={{animationDelay:"0.2s"}} className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={havanaMockup} alt="" />
                     </div>
-                    <div className="project-summary">
+                    <div style={{animationDelay:"0.4s"}} className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={crispyMockup} alt="" />
                     </div>
                 </div>

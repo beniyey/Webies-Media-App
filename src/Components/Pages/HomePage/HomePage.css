@@ -1,7 +1,3 @@
-.HomePage * {
-  max-width: 1500px;
-  margin-inline: auto;
-}
 .HomePage .main-banner {
   max-width: none;
   width: 100%;
@@ -29,15 +25,16 @@
   margin-block: 50px;
 }
 .HomePage .top-banner-text {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
   text-align: center;
   line-height: 0.5;
+  padding: 30px;
 }
 .HomePage .top-banner-text p {
   font-size: 25px;
-  line-height: 0.5;
 }
 .HomePage .top-banner-text p:nth-of-type(1) {
   font-family: fredoka-bold;
@@ -49,6 +46,9 @@
 }
 .HomePage .top-banner-text p:nth-of-type(2) span {
   font-family: fredoka-semi-bold;
+}
+.HomePage .Contact {
+  margin-inline: none;
 }
 .HomePage .pink-caption {
   margin: 0% auto;
@@ -81,13 +81,18 @@
   margin: auto;
   width: clamp(200px, 90%, 700px);
   aspect-ratio: 1/0.8;
-  animation: localBounce 5s ease-in-out 0s infinite alternate;
+  -webkit-animation: localBounce 5s ease-in-out 0s infinite alternate;
+          animation: localBounce 5s ease-in-out 0s infinite alternate;
   align-self: center;
 }
 .HomePage .data-section-parent {
   margin-top: 60px;
 }
+.HomePage .data-section-content {
+  padding: 30px;
+}
 .HomePage .portfolio-summary-parent {
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -161,7 +166,7 @@
     transform: none;
   }
   .HomePage .top-banner-text {
-    padding: 30px;
+    padding: 0px;
     line-height: 1;
   }
   .HomePage .top-banner-text p:nth-of-type(1) {
@@ -178,5 +183,8 @@
   }
   .HomePage .top-banner-text p:nth-of-type(3) {
     font-size: 25px;
+  }
+  .HomePage .main-banner {
+    padding: 0px;
   }
 }/*# sourceMappingURL=HomePage.css.map */
