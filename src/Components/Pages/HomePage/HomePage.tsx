@@ -14,16 +14,18 @@ import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 import Contact from "../Contact/Contact";
 
-const MainBannerWrapper = styled('div')({
-    backgroundImage: `url(${mainBannerImg})`,
-})
-
-const MainBannerContentWrapper = styled('div')({
-    position: "relative",
-})
-
-const MainBannerContent = styled('div')({
-
+const PinkButton = styled(Button)({
+    transition: 'all 0.3s',
+    color: 'white',
+    backgroundColor: "#E95A9C",
+    padding: "10px 30px",
+    borderRadius: "30px",
+    '&:hover': {
+        backgroundColor: "white",
+        color: "#E95A9C",
+        transition: '0.3s',
+        border: "2px solid #E95A9C",
+    }
 })
 
 const MoreInfoButton = styled(Button)({
@@ -41,44 +43,6 @@ const MoreInfoButton = styled(Button)({
     }
 })
 
-let standardWidth = "clamp(200px,80%,100%)"
-
-const WhatWeDo = styled('div')({
-    margin: "100px auto",
-    width: "100%",
-    textAlign: "center",
-})
-
-const DataSection = styled('div')({
-    margin: "auto",
-    width: "clamp(200px,90%,100%)",
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "20px",
-    textAlign: "center",
-    alignItems: "center",
-    justifyContent: "center",
-})
-
-const PortfolioSummary = styled('div')({
-    margin: "100px auto 0px",
-
-    textAlign: "center",
-})
-
-const PinkButton = styled(Button)({
-    transition: 'all 0.3s',
-    color: 'white',
-    backgroundColor: "#E95A9C",
-    padding: "10px 30px",
-    borderRadius: "30px",
-    '&:hover': {
-        backgroundColor: "white",
-        color: "#E95A9C",
-        transition: '0.3s',
-        border: "2px solid #E95A9C",
-    }
-})
 
 function HomePage(): JSX.Element {
 
@@ -189,7 +153,7 @@ function HomePage(): JSX.Element {
                         el.classList.add("animate__fadeInRight")
                         el.classList.remove("animate__fadeOutRight")
                     })
-                }else{
+                } else {
                     document.querySelectorAll(".project-summary").forEach((el) => {
                         el.classList.remove("animate__fadeInRight")
                         el.classList.add("animate__fadeOutRight")
@@ -229,28 +193,29 @@ function HomePage(): JSX.Element {
 
     return (
         <div className="HomePage">
-            <MainBannerWrapper ref={topBanner} className="main-banner ">
-                <MainBannerContentWrapper sx={{ width: "inherit" }}>
-                    <MainBannerContent className="main-banner-content">
-                        <div className="animate__animated top-banner-text invisible">
-                            <p >פיתרונות דיגיטל מותאמים </p>
-                            <p >אישית <span >להגדלת</span> </p>
-                            <p>החשיפה של העסק שלכם</p>
-                            {/* <p >אנחנו Webies סוכנות דיגיטל</p>
-                            <p >ומיתוג לעסקים <span >ועצמאיים</span> </p>
-                            <p>ביחד נביא את החשיפה שלכם ברשת</p>
-                            <p>למיצוי מקסימלי, ועלייה בכמות הלקוחות\מכירות</p> */}
-                            <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
-                        </div>
-                    </MainBannerContent>
-                </MainBannerContentWrapper>
-            </MainBannerWrapper>
+
+            {/* Main Banner */}
+            <div ref={topBanner} className="main-banner">
+                <div className="animate__animated top-banner-text invisible">
+                    <h1>
+                        ממשו את פוטנציאל 
+                         העסק שלכם<span > בדיגיטל </span> 
+                    </h1>
+                    <p>
+                        ביחד ניצור שילוב של עיצוב חדשני ופיתוח מתקדם 
+                        בשביל להביא את העסק שלכם לרמה הבאה
+                        ולהבדיל אתכם מהמתחרים
+                    </p>
+
+                    <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
+                </div>
+            </div>
 
             <div ref={carousel} className="brand-carousel">
                 <BrandCarousel />
             </div>
 
-            <WhatWeDo ref={whatWeDo}>
+            <div ref={whatWeDo}>
                 <div className="pink-caption animate__animated">
                     <p>מה אנחנו עושים?</p>
                 </div>
@@ -261,7 +226,7 @@ function HomePage(): JSX.Element {
                         return <HomePageServiceCard key={i} index={i + 1} img={require(`../../../Assets/Images/shapes/service-i-${i + 1}.png`)} />
                     })}
                 </div>
-            </WhatWeDo>
+            </div>
             <div ref={aboutUs} className="data-section" >
 
                 <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
@@ -308,7 +273,7 @@ function HomePage(): JSX.Element {
                 </div>
                 <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
             </div >
-            <PortfolioSummary className="" ref={topProjects}>
+            <div className="" ref={topProjects}>
                 <div className="pink-caption">
                     <p>כנסו והתרשמו</p>
                 </div>
@@ -318,15 +283,15 @@ function HomePage(): JSX.Element {
                     <div className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={foodiesMockup} alt="" />
                     </div>
-                    <div style={{animationDelay:"0.2s"}} className="project-summary invisible animate__animated">
+                    <div style={{ animationDelay: "0.2s" }} className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={havanaMockup} alt="" />
                     </div>
-                    <div style={{animationDelay:"0.4s"}} className="project-summary invisible animate__animated">
+                    <div style={{ animationDelay: "0.4s" }} className="project-summary invisible animate__animated">
                         <img className="portfolio-image" src={crispyMockup} alt="" />
                     </div>
                 </div>
                 <PinkButton startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
-            </PortfolioSummary>
+            </div>
 
             <div className="contact-page">
                 <Contact />
@@ -335,3 +300,4 @@ function HomePage(): JSX.Element {
     );
 }
 export default HomePage;
+
