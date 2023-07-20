@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 @font-face {
     font-family: fredoka-semi-bold;
     src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-SemiBold.ttf);
@@ -23,15 +25,16 @@
     src: url(../src/Assets/fonts/Fredoka/static/Fredoka/Fredoka-Light.ttf);
 }
 
+
 @keyframes localBounce {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px);
+        transform: translateY(-20px);
     }
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -50,6 +53,8 @@ body {
     color: #E95A9C;
     width: 200px;
     font-family: fredoka-bold ;
+    margin: auto;
+    text-align: center;
 }
 
 .internal-section-spacer {
@@ -70,7 +75,7 @@ body {
     content: '';
     width: 2rem;
     height: 6px;
-    border: 4px solid rgb(232, 101, 160, 0.7);
+    border: 4px solid $primary-pink;
     border-radius: 20px;
     margin:auto;
 }
@@ -83,7 +88,7 @@ body {
     content: '';
     width: 2rem;
     height: 6px;
-    border: 4px solid rgb(232, 101, 160, 0.7);
+    border: 4px solid $primary-pink;
     border-radius: 20px;
     margin:auto;
 }
@@ -132,6 +137,17 @@ code {
 
 .invisible{
     opacity: 0;
+}
+
+.heading{
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05rem;
+}
+
+.center{
+    text-align: center;
+    margin: auto;
 }
 
 @media only screen and (max-width:1100px){

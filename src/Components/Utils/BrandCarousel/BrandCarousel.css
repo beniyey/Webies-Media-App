@@ -12,9 +12,7 @@
 .BrandCarousel .brand-image {
   width: 78px;
   transition: 500ms;
-  opacity: 0.4;
 }
 .BrandCarousel .brand-image:hover {
   transition: 500ms;
-  opacity: 1;
 }/*# sourceMappingURL=BrandCarousel.css.map */

@@ -1,3 +1,8 @@
+.HomePageServiceCard {
+  width: 400px;
+  text-align: center;
+  padding: 30px;
+}
 .HomePageServiceCard * {
   transition: 200ms ease;
 }
@@ -8,8 +13,9 @@
   line-height: 22px;
   min-height: 70px;
   margin: 20px auto;
-  justify-content: left;
+  justify-content: center;
   gap: 30px;
+  text-align: center;
 }
 .HomePageServiceCard .header img {
   width: 80px;
@@ -41,5 +47,5 @@
 .HomePageServiceCard .main-text {
   color: #7e8aa7;
   margin-top: 20px;
-  text-align: right;
+  text-align: center;
 }/*# sourceMappingURL=HomePageServiceCard.css.map */

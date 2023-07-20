@@ -1,9 +1,12 @@
+.HomePage .heading {
+  text-align: center;
+}
 .HomePage .main-banner {
   width: 100%;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-image: url(../../../Assets/Images/backgrounds/top-banner-home-page.jpeg);
   position: relative;
   direction: rtl;
@@ -12,15 +15,14 @@
   justify-content: flex-start;
 }
 .HomePage .top-banner-text {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 50rem;
   white-space: wrap;
-  text-align: right;
   line-height: 1.3;
-  padding-right: 10rem;
+  padding: 2rem;
   color: white;
+  text-align: center;
 }
 .HomePage .top-banner-text h1 {
   letter-spacing: -1%;
@@ -30,9 +32,140 @@
   line-height: 1.7;
   font-size: 1.3rem;
 }
-@media only screen and (max-width: 40em) {
+.HomePage .what-we-do {
+  margin: 5rem auto;
+  width: clamp(200px, 90%, 100%);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.HomePage .what-we-do .what-we-do-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+.HomePage .what-we-do .pink-caption {
+  margin: 0% auto;
+}
+.HomePage .about,
+.HomePage .services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 2rem;
+}
+.HomePage .about .bouncing-img,
+.HomePage .services .bouncing-img {
+  width: clamp(200px, 90%, 700px);
+  aspect-ratio: 1/0.9;
+  animation: localBounce 5s ease-in-out 0s infinite alternate;
+  align-self: center;
+}
+.HomePage .about .about-content-parent,
+.HomePage .about .services-content-parent,
+.HomePage .services .about-content-parent,
+.HomePage .services .services-content-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  font-weight: bolder;
+}
+.HomePage .about .about-content-parent h1,
+.HomePage .about .services-content-parent h1,
+.HomePage .services .about-content-parent h1,
+.HomePage .services .services-content-parent h1 {
+  padding-block: 20px;
+}
+.HomePage .about .about-content-parent .about-content,
+.HomePage .about .about-content-parent .services-content,
+.HomePage .about .services-content-parent .about-content,
+.HomePage .about .services-content-parent .services-content,
+.HomePage .services .about-content-parent .about-content,
+.HomePage .services .about-content-parent .services-content,
+.HomePage .services .services-content-parent .about-content,
+.HomePage .services .services-content-parent .services-content {
+  text-align: center;
+  max-width: 40rem;
+}
+.HomePage .about .about-content-parent .about-content-inner,
+.HomePage .about .about-content-parent .services-content-inner,
+.HomePage .about .services-content-parent .about-content-inner,
+.HomePage .about .services-content-parent .services-content-inner,
+.HomePage .services .about-content-parent .about-content-inner,
+.HomePage .services .about-content-parent .services-content-inner,
+.HomePage .services .services-content-parent .about-content-inner,
+.HomePage .services .services-content-parent .services-content-inner {
+  font-family: fredoka-semi-bold;
+  display: block;
+  color: rgba(232, 101, 160, 0.7);
+  padding-block: 0.5rem;
+  font-size: 1.5rem;
+}
+.HomePage .about .about-content-parent .heading,
+.HomePage .about .services-content-parent .heading,
+.HomePage .services .about-content-parent .heading,
+.HomePage .services .services-content-parent .heading {
+  text-align: center;
+}
+.HomePage .about .services,
+.HomePage .services .services {
+  flex-direction: column-reverse;
+}
+.HomePage .featured-projects {
+  padding: 2rem;
+  text-align: center;
+}
+.HomePage .portfolio-summary-parent {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  margin: auto;
+  flex-grow: 0;
+}
+.HomePage .portfolio-summary-parent .portfolio-image {
+  width: 350px;
+  aspect-ratio: 1/0.85;
+}
+@media only screen and (min-width: 80rem) {
   .HomePage .top-banner-text {
-    padding-right: 0;
-    text-align: center;
+    padding-right: 10rem;
+    text-align: right;
+  }
+  .HomePage .what-we-do .what-we-do-summary {
+    flex-direction: row;
+  }
+  .HomePage .what-we-do .bouncing-img {
+    width: clamp(200px, 45%, 500px);
+  }
+  .HomePage .about,
+  .HomePage .services {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+    margin: auto;
+    align-items: center;
+    padding-block: 4rem;
+  }
+  .HomePage .about .about-content-parent,
+  .HomePage .about .services-content-parent,
+  .HomePage .services .about-content-parent,
+  .HomePage .services .services-content-parent {
+    padding: 30px;
+  }
+  .HomePage .services {
+    flex-direction: row-reverse;
+  }
+  .HomePage .portfolio-summary-parent {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=HomePage.css.map */

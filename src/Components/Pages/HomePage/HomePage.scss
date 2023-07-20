@@ -1,10 +1,19 @@
+@import "../../../variables.scss";
+
 .HomePage {
+
+    .heading {
+        text-align: center;
+    }
+
+    // MAIN BANNER STYLE
+
     .main-banner {
         width: 100%;
         min-height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: right;
         background-image: url(../../../Assets/Images/backgrounds/top-banner-home-page.jpeg);
         position: relative;
         direction: rtl;
@@ -17,30 +26,165 @@
         width: fit-content;
         max-width: 50rem;
         white-space: wrap;
-        text-align: right;
         line-height: 1.3;
-        padding-right: 10rem;
+        padding: 2rem;
         color: white;
-        
-        h1{
+        text-align: center;
+
+        h1 {
             letter-spacing: -1%;
             font-size: 3rem;
-            span{
-            }
         }
-        p{
+
+        p {
             line-height: 1.7;
             font-size: 1.3rem;
         }
 
     }
 
-    @media only screen and (max-width: 40em) {
-        .top-banner-text {
-            padding-right: 0;
-            text-align: center;
+    // Summary Section - about and services
+
+    .what-we-do {
+        margin: 5rem auto;
+        width: clamp(200px, 90%, 100%);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        .what-we-do-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .pink-caption {
+            margin: 0% auto;
         }
     }
+
+    // about and services section
+    .about,
+    .services {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 2rem;
+
+        .bouncing-img {
+            width: clamp(200px, 90%, 700px);
+            aspect-ratio: 1/0.9;
+            animation: localBounce 5s ease-in-out 0s infinite alternate;
+            align-self: center;
+        }
+
+        .about-content-parent,
+        .services-content-parent {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            font-weight: bolder;
+
+            h1 {
+                padding-block: 20px;
+            }
+
+            .about-content,
+            .services-content {
+                text-align: center;
+                max-width: 40rem;
+            }
+
+            .about-content-inner,
+            .services-content-inner {
+                font-family: fredoka-semi-bold;
+                display: block;
+                color: $primary-pink;
+                padding-block: 0.5rem;
+                font-size: 1.5rem;
+            }
+
+            .heading {
+                text-align: center;
+            }
+        }
+
+        .services {
+            flex-direction: column-reverse;
+        }
+    }
+
+
+    .featured-projects {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .portfolio-summary-parent {
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        gap: 4rem;
+        margin: auto;
+        flex-grow: 0;
+
+        .portfolio-image {
+            width: clamp(200px, 350px, 350px);
+            aspect-ratio: 1/0.85;
+        }
+    }
+
+    @media only screen and (min-width: 40rem) {}
+
+    @media only screen and (min-width: 80rem) {
+        .top-banner-text {
+            padding-right: 10rem;
+            text-align: right;
+        }
+
+        .what-we-do {
+            .what-we-do-summary {
+                flex-direction: row;
+            }
+
+            .bouncing-img {
+                width: clamp(200px, 45%, 500px);
+            }
+        }
+
+        .about,
+        .services {
+            flex-direction: row;
+            justify-content: center;
+            gap: 10rem;
+            margin: auto;
+            align-items: center;
+            padding-block: 4rem;
+
+            .about-content-parent,
+            .services-content-parent {
+                padding: 30px;
+            }
+        }
+
+        .services {
+            flex-direction: row-reverse;
+        }
+
+        .portfolio-summary-parent {
+            flex-direction: row;
+        }
+    }
+
 
 }
 

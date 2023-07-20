@@ -168,7 +168,7 @@ function HomePage(): JSX.Element {
 
     useEffect(() => {
 
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
         containersArr.forEach((element, index) => {
             if (element.current) {
                 observer.observe(element.current)
@@ -198,11 +198,11 @@ function HomePage(): JSX.Element {
             <div ref={topBanner} className="main-banner">
                 <div className="animate__animated top-banner-text invisible">
                     <h1>
-                        ממשו את פוטנציאל 
-                         העסק שלכם<span > בדיגיטל </span> 
+                        ממשו את פוטנציאל
+                        העסק שלכם<span > בדיגיטל </span>
                     </h1>
                     <p>
-                        ביחד ניצור שילוב של עיצוב חדשני ופיתוח מתקדם 
+                        ביחד ניצור שילוב של עיצוב חדשני ופיתוח מתקדם
                         בשביל להביא את העסק שלכם לרמה הבאה
                         ולהבדיל אתכם מהמתחרים
                     </p>
@@ -215,11 +215,11 @@ function HomePage(): JSX.Element {
                 <BrandCarousel />
             </div>
 
-            <div ref={whatWeDo}>
+            <div ref={whatWeDo} className="what-we-do">
                 <div className="pink-caption animate__animated">
                     <p>מה אנחנו עושים?</p>
                 </div>
-                <h1 className="animate__animated" style={{ fontSize: "50px" }}>מעלים את העסק שלך לדיגיטל <br /> עם הטובים ביותר</h1>
+                <h1 className="animate__animated heading">מעלים את העסק שלך לדיגיטל <br /> עם הטובים ביותר</h1>
                 <span className="internal-section-spacer"></span>
                 <div className="what-we-do-summary">
                     {[...Array(3)].map((el, i) => {
@@ -227,57 +227,56 @@ function HomePage(): JSX.Element {
                     })}
                 </div>
             </div>
-            <div ref={aboutUs} className="data-section" >
+
+            <div ref={aboutUs} className="about" >
 
                 <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
-                <div className="data-section-parent">
+
+                <div className="about-content-parent">
                     <div className="pink-caption">
                         <p>קצת עלינו</p>
                     </div>
-                    <h1 style={{ fontSize: "50px" }}>ההצלחה שלך היא המטרה שלנו</h1>
+                    <h1 className="heading center">ההצלחה שלך היא המטרה שלנו</h1>
                     <span className="internal-section-spacer"></span>
-                    <div className="data-section-content">
+                    <div className="about-content">
                         אנחנו צוות של מפתחים ומעצבים עם תשוקה רבה לתחום והמון רצון לעזור לעסקים להתקדם לעבר עידן הטכנולוגיה ולהתקדם בתחום בו הם עוסקיו
-                        <br />
-                        <span className="data-section-content-inner">
+                        <span className="about-content-inner">
                             אנחנו איתך בכל צעד בדרך להצלחה
                         </span>
-                        <br />
                         כל צעד איתנו בדרך להצלחה יהיה בתיאום מלא ובכל עת תוכל לפנות אלינו ולקבל עזרה והסברים על הפרויקט שלך, כמו כן נשמח לשמוע ממך ולהתאים את הפרויקט לצרכיך ולצרכי העסק שלך
                     </div>
-
                 </div>
+
             </div >
-            <div ref={whatWeDoFloater} className="data-section" >
-                <div className="data-section-parent">
+
+            <div ref={whatWeDoFloater} className="services" >
+                <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
+                <div className="services-content-parent">
                     <div className="pink-caption">
                         <p>מה אנחנו עושים</p>
                     </div>
-                    <h1 style={{ fontSize: "50px" }}>אנחנו מציעים את הכלים הטובים ביותר
+                    <h1 className="heading">אנחנו מציעים את הכלים הטובים ביותר
                         לעסק שלך</h1>
                     <span className="internal-section-spacer"></span>
-                    <div className="data-section-content">
+                    <div className="services-content">
                         המשימה שלנו היא לספק לך את הכלים הטובים ביותר לניהול העסק שלך ביעילות , כדי שתוכל להתמקד במה שאתה עושה הכי טוב, ואנחנו נדאג עבורך לכל השאר.                        <br />
-                        <span className="data-section-content-inner">
+                        <span className="services-content-inner">
                             כלים לניהול
                         </span>
-                        <br />
                         אנחנו נעזור לך לפתח כלים לשיפור ויעול הניהול באתר שלךת על מנת ליעל את הזמן שלך ואת איכות השירותים שאתה מציע,
-                        <br />
-                        <span className="data-section-content-inner">
+                        <span className="services-content-inner">
                             סטטיסטיקה וביצועי האתר
 
                         </span>
-                        <br />
                         אנחנו נעמיד ברשותך כלים לבקרת ביצועי האתר שלך, ונעזור לך להבין את המשתמשים שלך ואת הפעילות שלהם באתר שלך, בשביל לספק להם בעתיד חווית משתמש טובה יותר, ולהגדיל את הכנסות העסק שלך                    </div>
                 </div>
-                <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
             </div >
-            <div className="" ref={topProjects}>
+
+            <div className="featured-projects" ref={topProjects}>
                 <div className="pink-caption">
                     <p>כנסו והתרשמו</p>
                 </div>
-                <h1 style={{ fontSize: "50px" }}>הפרוייקטים המובילים שלנו</h1>
+                <h1 className="heading">הפרוייקטים המובילים שלנו</h1>
                 <span className="internal-section-spacer"></span>
                 <div className="portfolio-summary-parent">
                     <div className="project-summary invisible animate__animated">
@@ -290,7 +289,7 @@ function HomePage(): JSX.Element {
                         <img className="portfolio-image" src={crispyMockup} alt="" />
                     </div>
                 </div>
-                <PinkButton startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
+                <PinkButton className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
             </div>
 
             <div className="contact-page">

@@ -64,7 +64,7 @@ export default function Header() {
     const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
+        setMobileOpen(false);
     };
 
     useEffect(()=>{
@@ -76,7 +76,6 @@ export default function Header() {
         //document.querySelectorAll(".active-tab").forEach((element)=>element.classList.remove("active-tab"))
         let element = document.getElementById(id.substring(1))
         if (element){
-            console.log(element)
             element.classList.add("active-tab")
         }
     }
@@ -88,23 +87,6 @@ export default function Header() {
             (event.target as HTMLButtonElement).classList.add("active-tab")
         }
     }
-
-
-    const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <img onClick={()=>navigateTo("/home")} src={logo} alt="logo" />
-            <Divider />
-            <List>
-                {navItems.map((item) => (
-                    <ListItem  key={item.display} disablePadding>
-                        <ListItemButton className={item.value} sx={{ textAlign: 'center' }}>
-                            <ListItemText onClick={(e)=>navigateTo(item.value,e)} primary={item.display} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
 
     const container = document.body;
 
@@ -122,7 +104,7 @@ export default function Header() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{ display: { xs: 'block', sm: 'block' } }}>
                         <img src={logo} style={{cursor:"pointer"}} onClick={()=>navigateTo("/home")} alt="a pink logo of webies media" width="200px" />
                     </Box>
                     <Box sx={{ whiteSpace:"nowrap" ,display: { xs: 'none', sm: 'block' } }}>
@@ -137,23 +119,6 @@ export default function Header() {
                     </ContactButton>
                 </Toolbar>
             </AppBar>
-            <Box component="nav">
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-            </Box>
         </Box>
     );
 }
