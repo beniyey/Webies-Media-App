@@ -58,6 +58,7 @@ export default function Header() {
 
         document.getElementById("page-overlay")?.classList.toggle("no-display")
         let present = document.getElementById("mobile-buttons")?.classList.toggle("animate__fadeIn")
+        document.getElementById("mobile-buttons")?.classList.toggle("defer", !present)
         document.getElementById("mobile-buttons")?.classList.toggle("animate__fadeOut", !present)
         document.querySelectorAll(".mobile-route").forEach((element) => {
             let present = element.classList.toggle("animate__fadeInDown")

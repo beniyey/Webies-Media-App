@@ -10,7 +10,6 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    height: 0px;
     z-index: 1000;
 
 
@@ -89,6 +88,10 @@
 
     .no-display {
         display: none;
+    }
+
+    .defer{
+        pointer-events: none;
     }
 
     @media only screen and (min-width: 40rem) {
