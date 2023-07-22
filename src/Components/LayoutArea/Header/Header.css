@@ -1,9 +1,95 @@
-.active-tab {
-  color: #E95A9C !important;
+.Header {
+  background-color: rgb(39, 11, 85);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-template-areas: "logo nav";
+  padding: 2rem;
 }
-
-@media only screen and (max-width: 1100px) {
+.Header .logo {
+  grid-area: logo;
+  justify-self: start;
+}
+.Header :nth-child(3) {
+  grid-area: nav;
+  justify-self: end;
+}
+.Header .contact-button {
+  grid-area: contact;
+  justify-self: end;
+  display: none;
+}
+.Header .logo {
+  width: 200px;
+}
+.Header .links {
+  display: flex;
+}
+.Header .links * {
+  text-decoration: none;
+  white-space: nowrap;
+}
+.Header .mobile {
+  position: relative;
+}
+.Header .mobile .mobile-buttons {
+  color: rgb(39, 11, 85);
+  padding: 1.5rem 0rem;
+  background-color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+  top: 3rem;
+  right: 0rem;
+  direction: rtl;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 1rem 0.2rem rgba(39, 11, 85, 0.3);
+  opacity: 0;
+}
+.Header .regular {
+  display: none;
+}
+.Header .mobile {
+  display: block;
+}
+@media only screen and (min-width: 40rem) {
   .Header {
+    padding: 1.5rem 3rem;
+    grid-template-areas: "contact logo nav";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .Header .logo {
+    justify-self: center;
+  }
+  .Header .contact-button {
+    justify-self: start;
+    display: inline-flex;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  .Header {
+    grid-template-areas: "logo nav contact";
+  }
+  .Header .regular {
+    display: flex;
+  }
+  .Header .mobile {
     display: none;
+  }
+  .Header .logo {
+    justify-self: start;
+  }
+  .Header :nth-child(2).logo {
+    grid-area: nav;
+    justify-self: center;
+  }
+  .Header .contact-button {
+    justify-self: end;
+    display: inline-flex;
   }
 }/*# sourceMappingURL=Header.css.map */
