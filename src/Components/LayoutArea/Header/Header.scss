@@ -1,11 +1,116 @@
-.Header{
-}
-.active-tab{
-    color: #E95A9C !important;
-}
+@import "../../../variables.scss";
 
-@media only screen and(max-width:1100px){
-    .Header{
+.Header {
+    background-color: rgb(39, 11, 85);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-template-areas: "logo nav";
+    padding: 2rem;
+
+
+    .active {
+        color: $pink-caption;
+    }
+
+    .logo {
+        grid-area: logo;
+        justify-self: start;
+    }
+
+    :nth-child(3) {
+        grid-area: nav;
+        justify-self: end;
+    }
+
+    .contact-button {
+        grid-area: contact;
+        justify-self: end;
         display: none;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .links {
+        display: flex;
+
+        * {
+            text-decoration: none;
+            white-space: nowrap;
+        }
+    }
+    
+    .mobile {
+        position: relative;
+        
+        .mobile-buttons {
+            color:  rgb(39, 11, 85);
+            padding: 1.5rem 0rem;
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            z-index: 10000;
+            top: 3rem;
+            right: 0rem;
+            direction: rtl;
+            border-radius: 0.4rem;
+            box-shadow: 0px 0px 1rem 0.2rem rgb(39, 11, 85, 0.3);
+            opacity: 0;
+        }
+    }
+
+    .regular {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    @media only screen and (min-width: 40rem) {
+        padding: 1.5rem 3rem;
+        grid-template-areas: "contact logo nav";
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .logo {
+            justify-self: center;
+        }
+        .contact-button {
+            justify-self: start;
+            display: inline-flex;
+        }
+    }
+    
+    @media only screen and (min-width: 80rem) {
+        grid-template-areas: "logo nav contact";
+        
+        .regular {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .logo {
+            justify-self: start;
+        }
+        
+        :nth-child(2).logo {
+            grid-area: nav;
+            justify-self: center;
+        }
+
+        .contact-button {
+            justify-self: end;
+            display: inline-flex;
+        }
+
     }
 }

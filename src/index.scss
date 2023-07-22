@@ -150,6 +150,12 @@ code {
     margin: auto;
 }
 
+button, a{
+    width: fit-content ;
+    padding: 10px 20px ;
+    white-space: nowrap;
+}
+
 @media only screen and (max-width:1100px){
     p{
         font-size: 0.75rem;

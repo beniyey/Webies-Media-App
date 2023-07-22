@@ -3,6 +3,8 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import "./Layout.css";
+import CssBaseline from '@mui/material/CssBaseline';
+import { SyntheticEvent } from "react";
 
 const Copyrights = styled("div")({
     width: "80%",
@@ -17,6 +19,7 @@ const Copyrights = styled("div")({
 function Layout(): JSX.Element {
     return (
         <div id="scrollArea" className="Layout">
+            <CssBaseline />
             <header>
                 <Header />
             </header>
@@ -29,6 +32,8 @@ function Layout(): JSX.Element {
             <Copyrights>
                 Designed and developed by <span style={{color:"#ff57a4"}}>Webies Media</span> © 2023 All rights reserved.
             </Copyrights>
+
+
         </div>
     );
 }
