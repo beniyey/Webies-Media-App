@@ -124,6 +124,7 @@
   text-align: center;
 }
 .HomePage .portfolio-summary-parent {
+  overflow: hidden;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -133,8 +134,11 @@
   flex-grow: 0;
 }
 .HomePage .portfolio-summary-parent .portfolio-image {
-  width: 350px;
+  width: clamp(200px, 100%, 350px);
   aspect-ratio: 1/0.85;
+}
+.HomePage .section {
+  padding-block: 4rem;
 }
 @media only screen and (min-width: 80rem) {
   .HomePage .top-banner-text {

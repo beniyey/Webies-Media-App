@@ -14,15 +14,13 @@ const Copyrights = styled("div")({
     textAlign: "left",
     lineHeight: "50px",
     margin: "auto",
-    borderTop:"2px solid #e2e2e2",
+    borderTop: "2px solid #e2e2e2",
 })
 function Layout(): JSX.Element {
     return (
         <div id="scrollArea" className="Layout">
             <CssBaseline />
-            <header>
-                <Header />
-            </header>
+            <Header />
             <main>
                 <Main />
             </main>
@@ -30,7 +28,7 @@ function Layout(): JSX.Element {
                 <Footer />
             </footer>
             <Copyrights>
-                Designed and developed by <span style={{color:"#ff57a4"}}>Webies Media</span> © 2023 All rights reserved.
+                Designed and developed by <span style={{ color: "#ff57a4" }}>Webies Media</span> © 2023 All rights reserved.
             </Copyrights>
 
 

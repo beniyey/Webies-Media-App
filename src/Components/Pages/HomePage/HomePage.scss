@@ -129,6 +129,7 @@
     }
 
     .portfolio-summary-parent {
+        overflow: hidden;
         padding: 4rem 2rem;
         display: flex;
         flex-direction: column;
@@ -138,9 +139,13 @@
         flex-grow: 0;
 
         .portfolio-image {
-            width: clamp(200px, 350px, 350px);
+            width: clamp(200px, 100%, 350px);
             aspect-ratio: 1/0.85;
         }
+    }
+
+    .section{
+        padding-block: 4rem;
     }
 
     @media only screen and (min-width: 40rem) {}

@@ -228,7 +228,7 @@ function HomePage(): JSX.Element {
                 </div>
             </div>
 
-            <div ref={aboutUs} className="about" >
+            <div ref={aboutUs} className="about section" >
 
                 <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
 
@@ -249,7 +249,7 @@ function HomePage(): JSX.Element {
 
             </div >
 
-            <div ref={whatWeDoFloater} className="services" >
+            <div ref={whatWeDoFloater} className="services section" >
                 <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
                 <div className="services-content-parent">
                     <div className="pink-caption">
