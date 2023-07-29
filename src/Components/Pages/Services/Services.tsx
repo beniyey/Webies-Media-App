@@ -40,9 +40,9 @@ const PinkButton = styled(Button)({
 });
 
 function Services(): JSX.Element {
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0);
-    },[])
+    }, [])
 
     return (
         <div className="Services">
@@ -52,7 +52,7 @@ function Services(): JSX.Element {
                 </div>
                 <div className="top-floater-text">
                     <div className="pink-caption">
-                        <p>קצת עלינו</p>
+                        <p>מה אנחנו עושים</p>
                     </div>
                     <h1 style={{ fontSize: "50px", color: "#270B55" }}>אנחנו מציעים את הכלים <br /><span style={{ fontFamily: "fredoka-light" }}>הטובים ביותר לעסק</span> שלכם</h1>
                     <span className="internal-section-spacer" />
@@ -78,51 +78,54 @@ function Services(): JSX.Element {
             <div className="services-wrapper">
                 <div className="services-text">
                     <div className="pink-caption">
-                        <p>קצת עלינו</p>
+                        <p>השירותים שלנו</p>
                     </div>
                     <h1 style={{ fontSize: "50px", color: "#270B55" }}>מעלים את העסק שלך לדיגיטל <br /> <span style={{ fontFamily: "fredoka-light" }}>עם הטובים</span> ביותר</h1>
                     <span className="internal-section-spacer"></span>
                     <div className="services-cards">
-                        <div className="service-card">
-                            <div className="service-card-background"></div>
-                            <DashboardOutlinedIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
-                            <h1>
-                                קידום אתרים
-                            </h1>
-                            <span>
-                                אנחנו נעניק לאתר שלכם חשיפה גבוה יותר במנועי החיפוש, ונדאג לכך שלקוחות יוכלו למצוא אתכם יוצר בקלות במרחב הדיגיטלי
-                            </span>
-                            <Button sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
-                        </div>
-                        <div className="service-card">
+                        <div className="service-card development">
                             <div className="service-card-background"></div>
                             <DesignServicesIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 עיצוב ופיתוח אתרים
 
                             </h1>
-                            <span>
-                                תוך שימוש בטכנולוגיות המתקדמות ביותר, אנחנו נעצב נפתח ונעלה אתר לעסק שלכם                            </span>
+                            <p className="service-text">
+                                האתר שלך הוא הפנים הראשון של עסקך בעולם הדיגיטלי. אנחנו מבינים כמה חשוב להציג את העסק שלך בצורה מושכת ומקצועית. באמצעות צוות מומחים בעיצוב ופיתוח, אנחנו נבנה לך אתר אינטרנט מותאם אישית שיענה על כל צרכי העסק שלך. אנחנו מציעים פתרונות טכנולוגיים מתקדמים ומערכות ניהול תוכן ידידותיות, כדי שתוכל לעדכן את האתר שלך בקלות ובנוחות.
+                            </p>
                             <Button sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
-                        <div className="service-card">
+                        <div className="service-card seo">
+                            <div className="service-card-background"></div>
+                            <DashboardOutlinedIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
+                            <h1>
+                                קידום אתרים
+                            </h1>
+                            <p className="service-text">
+                                אינטרנט מלא באתרים, והידע כיצד לעשות שמציאות תהיה ברורה לגולשים הוא מפתח להצלחה בעולם המקוון. אנחנו מתמחים באופטימיזציה למנועי חיפוש (SEO) ונותנים מענה מקצועי לקידום אתרים. עם שירותי ה-SEO שלנו, אתה יכול להיות בטוח שהאתר שלך יופיע בראש תוצאות החיפוש, מה שיעניק לעסק שלך חשיפה מרבית ותעוזה בקרב לקוחות פוטנציאליים.
+                            </p>
+                            <Button sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
+                        </div>
+                        <div className="service-card social">
                             <div className="service-card-background"></div>
                             <EngineeringIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 מדיה חברתית
                             </h1>
-                            <span>
-                                אנחנו נקים לכם עמוד instagram/Facebook שיתאים לדרישות שלכם, וינגיש את השירותים שלכם ללקוחות                            </span>
+                            <p className="service-text">
+                                הרשתות החברתיות הפכו לכלי חיוני בקידום עסקים וביצוע קמפיינים שיווקיים יעילים. אנחנו מציעים שירותי ניהול וקידום ברשתות החברתיות כדי להגדיל את הנוכחות הדיגיטלית שלך ולקדם את המותג בקרב הקהל הרחב שלך. בעזרת תכניות ייחודיות, יצירת תוכן מרתק ואסטרטגיות יעילות, אנחנו נעזור לך להגיע לקהל יעד ולפתח קהילה נאמנה שתמכור לך מוצרים ושירותים.
+                            </p>
                             <Button sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
                         <div className="service-card">
-                            <div className="service-card-background"></div>
+                            <div className="service-card-background maintanance"></div>
                             <Diversity1Icon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 תחזוקת אתרים
                             </h1>
-                            <span>
-                                בכל מקרה שאתר שלכם דורש תחזוקה או חידוש של התוכן, אנחנו נדאג לעזור לכם ולבצע את השינויים הנדרשים בצורה הטובה ביותר                            </span>
+                            <p className="service-text">
+                                האתר שלך דורש תחזוקה וטיפוח קבועים כדי להבטיח פעילות חלקה ובטיחותית. אנחנו מציעים שירותי תחזוקת אתרים אמינים ומקצועיים, כדי שתוכל להתמקד בעיקרון העסק שלך ולהיות בטוח שאתרך תמיד מתעדכן ופועל בצורה אופטימלית. מכניסים שיפורים, מעדכנים תוכן, וכמובן מסייעים בפתרון תקלות טכניות באופן מהיר ויעיל.
+                            </p>
                             <Button sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
                     </div>

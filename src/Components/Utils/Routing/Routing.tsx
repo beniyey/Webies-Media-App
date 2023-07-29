@@ -4,6 +4,7 @@ import Contact from "../../Pages/Contact/Contact";
 import HomePage from "../../Pages/HomePage/HomePage";
 import Portfolio from "../../Pages/Portfolio/Portfolio";
 import Services from "../../Pages/Services/Services";
+import Development from "../../ServicePages/Development/Development";
 
 function Routing(): JSX.Element {
     return (
@@ -15,6 +16,10 @@ function Routing(): JSX.Element {
                 <Route path={"/contact"} element={<Contact />} />
                 <Route path={"/portfolio"} element={<Portfolio />} />
                 <Route path={"/services"} element={<Services />} />
+                <Route path={"/development"} element={<Development />} />
+                <Route path={"/seo"} element={<Services />} />
+                <Route path={"/maintanance"} element={<Services />} />
+                <Route path={"/social"} element={<Services />} />
             </Routes>
         </div>
     );

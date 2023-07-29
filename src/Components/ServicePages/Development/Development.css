@@ -1,0 +1,49 @@
+.Development .top-floater {
+  height: clamp(300px, 50vh, 400px);
+  position: relative;
+  background-image: linear-gradient(90deg, rgba(75, 40, 196, 0.9) 0%, rgba(139, 63, 174, 0.9) 100%);
+  text-align: center;
+  vertical-align: middle;
+}
+.Development .pink-caption {
+  color: white;
+  background-color: #ff57a4;
+}
+.Development .top-floater-bg-image {
+  background-image: url("../../../Assets/Images/resources/israel-andrade-YI_9SivVt_s-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+}
+.Development .top-floater-image img {
+  width: clamp(200px, 80%, 80%);
+  aspect-ratio: 1/1;
+}
+.Development .header-text {
+  color: white;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Development .text-content {
+  color: rgb(39, 11, 85);
+  text-align: center;
+  padding: 3rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: fredoka-medium;
+  font-size: 20px;
+  text-align: center;
+}
+.Development .text-content section {
+  padding-block: 1rem;
+  direction: rtl;
+}/*# sourceMappingURL=Development.css.map */

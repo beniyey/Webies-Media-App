@@ -1,25 +1,34 @@
 .ProjectCard {
+  overflow: hidden;
+  display: grid;
   margin: auto;
   width: clamp(300px, 100%, 550px);
+  grid-template-rows: repat(5, 1fr);
+  grid-template-columns: 1fr;
 }
 .ProjectCard * {
-  -o-object-fit: contain;
-     object-fit: contain;
+  transition: all 0.3s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .ProjectCard img {
   width: 100%;
   height: 100%;
+  grid-column: 1/1;
+  grid-row: 1/5;
 }
 .ProjectCard .content {
-  width: 80%;
   color: #42495b;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding-top: 34.5px;
-  padding-bottom: 34.5px;
-  margin: auto;
+  padding: 1.2rem;
+  margin: 1rem 1.2rem;
   pointer-events: none;
-  opacity: 0;
+  grid-column: 1/1;
+  grid-row: 1/5;
+  border-radius: 0.2rem;
+  align-self: end;
 }
 .ProjectCard .content span:nth-of-type(1) {
   font-family: fredoka-bold;
@@ -28,12 +37,9 @@
 .ProjectCard .content span:nth-of-type(2) {
   color: #ff7200;
 }
-.ProjectCard .content-parent {
-  width: 100%;
-  top: 60%;
+.ProjectCard:hover .content {
+  transform: translateY(-20px);
 }
-.ProjectCard .overlay {
-  width: 100%;
-  height: 100%;
-  z-index: 1100;
+.ProjectCard:hover img {
+  transform: scale(1.2);
 }/*# sourceMappingURL=ProjectCard.css.map */

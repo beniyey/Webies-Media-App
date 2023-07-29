@@ -12,6 +12,41 @@
     top: 0;
     z-index: 1000;
 
+    .route {
+        position: relative;
+    }
+
+    .services-select-wrapper:hover {
+        .services-select {
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+
+            .service-route {
+                opacity: 1;
+            }
+        }
+    }
+
+    .services-select {
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+
+        a {
+            color: rgb(39, 11, 85);
+        }
+
+        .service-route {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-route:hover {
+            color: $pink-caption;
+        }
+    }
 
     .active {
         color: $pink-caption;
@@ -51,19 +86,8 @@
 
         .mobile-buttons {
             color: rgb(39, 11, 85);
-            padding: 1.5rem 0rem;
-            background-color: white;
-            width: fit-content;
-            height: fit-content;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            z-index: 10000;
             top: 3rem;
             right: 0rem;
-            direction: rtl;
-            border-radius: 0.4rem;
-            box-shadow: 0px 0px 1rem 0.2rem rgb(39, 11, 85, 0.3);
             opacity: 0;
         }
     }
@@ -90,7 +114,7 @@
         display: none;
     }
 
-    .defer{
+    .defer {
         pointer-events: none;
     }
 
@@ -133,6 +157,10 @@
         .contact-button {
             justify-self: end;
             display: inline-flex;
+        }
+
+        .services-select {
+            position: absolute;
         }
 
     }

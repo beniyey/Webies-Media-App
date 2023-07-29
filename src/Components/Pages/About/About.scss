@@ -55,6 +55,22 @@
         width: 100%;
     }
 
+    .about-content{
+        padding:4rem 2rem;
+        .team-section{
+            max-width: 80rem;
+            margin: 0 auto;
+            padding:2rem 0;
+            font-family: fredoka-medium;
+            font-size: 20px;
+            text-align: center;
+            section{
+                padding-block: 1rem;
+                direction: rtl;
+            }
+        }
+    }
+
     @media only screen and (max-width:"1050px") {
         h1 {
             white-space: normal;

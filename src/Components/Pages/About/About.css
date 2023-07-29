@@ -43,6 +43,21 @@
 .About .child {
   width: 100%;
 }
+.About .about-content {
+  padding: 4rem 2rem;
+}
+.About .about-content .team-section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: fredoka-medium;
+  font-size: 20px;
+  text-align: center;
+}
+.About .about-content .team-section section {
+  padding-block: 1rem;
+  direction: rtl;
+}
 @media only screen and (max-width: 1050px) {
   .About h1 {
     white-space: normal;

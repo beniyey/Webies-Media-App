@@ -24,14 +24,14 @@ const PinkButton = styled(Button)({
 
 
 function About(): JSX.Element {
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0);
-    },[])
+    }, [])
     return (
         <div className="About">
             <div className="top-floater">
                 {/* <div className="top-floater-image"> */}
-                    <img className="top-floater-image" src={AboutFloater} alt="floating image of our team" />
+                <img className="top-floater-image" src={AboutFloater} alt="floating image of our team" />
                 {/* </div> */}
                 <div className="">
                     <div className="top-floater-text">
@@ -53,6 +53,42 @@ function About(): JSX.Element {
                             ולצרכי העסק שלכם.                         </div>
                         <PinkButton startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
                     </div>
+                </div>
+            </div>
+            <div className="about-content">
+                <div className="pink-caption">
+                    <p>על צוות הפיתוח ועיצוב שלנו</p>
+                </div>
+
+                <div className="team-section">
+
+                    <section>
+                        צוות הפיתוח שלנו מורכב מקבוצת מתכנתים ומעצבים מובילים בתחום, בעלי ידע רחב ובניסיון עשיר בתחום.
+                    </section>
+
+                    <section>
+                        Webies הוא סטודיו דיגיטלי בעל ניסיון של שנים רבות, המתמחה בעיצוב ופיתוח ממשקי משתמש מרהיבים ובניית אתרים מתקדמים ומתואמים אישית.
+                        כל חבר צוות נבחר בקפידה, ואנחנו גאים לצוות המומחים שלנו.  לכל פרוייקט נתאים צוות מומחים מנוסים שיעבוד עם יכולות יצירתיות ואנרגיה רבה בהתאם לדרישות הפרוייקט שלך,  כדי להבטיח אתר או ממשק דיגיטלי איכותי וייחודי ביותר בשבילך.
+                    </section>
+
+                    <section>
+                        המתכנתים שלנו עובדים בדיוק רב תוך פיקוח על קוד נקי, תוכנה בטוחה ושירותי אינטרנט אמינים.
+                        יחד עם המעצבים המוכשרים שלנו, אנו יוצרים ממשקים ידידותיים, אסתטיים ויעילים, המספקים למשתמשים חוויה חיובית, מרהיבה ונגישה.
+                    </section>
+
+                    <section>
+                        הניסיון הרב והידע העשיר של הצוות מאפשרים לנו להתמודד בקלות עם אתגרים טכנולוגיים ולספק פתרונות מותאמים אישית, בהתאם לצרכי הלקוחות.
+                        אנחנו מקפידים תמיד להתעדכן בטכנולוגיות הכי חדשות בתחום, ומביאים לכם את ההבנה העמוקה ביותר של עולם הפיתוח והעיצוב.
+                    </section>
+
+                    <section>
+                        אנו מתחייבים למתן שירות מעולה, לשמוע לצרכי הלקוחות שלנו, ולעבוד בשותפות עם כל לקוח כדי לספק פתרונות שיתאימו בדיוק לצרכים שלכם.
+                    </section>
+
+                    <section>
+                        צרו קשר עוד היום עם צוות המומחים שלנו! נשמח לעמוד לשירותכם ולהביא לכם את האתר או הממשק הדיגיטלי המושלם שיתאים לצרכים שלכם. מוכנים להביא את הפרוייקט שלכם לרמה הבאה?
+                    </section>
+
                 </div>
             </div>
         </div>

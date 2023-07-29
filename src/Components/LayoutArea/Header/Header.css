@@ -10,6 +10,33 @@
   top: 0;
   z-index: 1000;
 }
+.Header .route {
+  position: relative;
+}
+.Header .services-select-wrapper:hover .services-select {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.Header .services-select-wrapper:hover .services-select .service-route {
+  opacity: 1;
+}
+.Header .services-select {
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.Header .services-select a {
+  color: rgb(39, 11, 85);
+}
+.Header .services-select .service-route {
+  transition: all 0.3s ease-in-out;
+}
+.Header .services-select .service-route:hover {
+  color: #E95A9C;
+}
 .Header .active {
   color: #E95A9C;
 }
@@ -41,21 +68,8 @@
 }
 .Header .mobile .mobile-buttons {
   color: rgb(39, 11, 85);
-  padding: 1.5rem 0rem;
-  background-color: white;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  z-index: 10000;
   top: 3rem;
   right: 0rem;
-  direction: rtl;
-  border-radius: 0.4rem;
-  box-shadow: 0px 0px 1rem 0.2rem rgba(39, 11, 85, 0.3);
   opacity: 0;
 }
 .Header .regular {
@@ -114,5 +128,8 @@
   .Header .contact-button {
     justify-self: end;
     display: inline-flex;
+  }
+  .Header .services-select {
+    position: absolute;
   }
 }/*# sourceMappingURL=Header.css.map */
