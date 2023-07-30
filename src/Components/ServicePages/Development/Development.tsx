@@ -1,10 +1,11 @@
 import "./Development.css"
+import mainImg from "../../../Assets/Images/resources/development-page.jpg"
 import React from "react"
 
 
 export default function Development() {
     return (
-        <div className="Development">
+        <div className="Development Service-Page">
             <div className="top-floater">
                 <div className="top-floater-bg-image"></div>
                 <div className="top-floater-bg-image-overlay"></div>

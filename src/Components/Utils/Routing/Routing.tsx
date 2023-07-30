@@ -5,6 +5,9 @@ import HomePage from "../../Pages/HomePage/HomePage";
 import Portfolio from "../../Pages/Portfolio/Portfolio";
 import Services from "../../Pages/Services/Services";
 import Development from "../../ServicePages/Development/Development";
+import Seo from "../../ServicePages/Seo/Seo";
+import Maintanance from "../../ServicePages/Maintanance/Maintanance";
+import Social from "../../ServicePages/Social/Social";
 
 function Routing(): JSX.Element {
     return (
@@ -17,9 +20,9 @@ function Routing(): JSX.Element {
                 <Route path={"/portfolio"} element={<Portfolio />} />
                 <Route path={"/services"} element={<Services />} />
                 <Route path={"/development"} element={<Development />} />
-                <Route path={"/seo"} element={<Services />} />
-                <Route path={"/maintanance"} element={<Services />} />
-                <Route path={"/social"} element={<Services />} />
+                <Route path={"/seo"} element={<Seo />} />
+                <Route path={"/maintanance"} element={<Maintanance />} />
+                <Route path={"/social"} element={<Social />} />
             </Routes>
         </div>
     );

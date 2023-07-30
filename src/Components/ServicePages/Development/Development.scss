@@ -1,10 +1,14 @@
-.Development {
+.Service-Page {
     .top-floater {
         height: clamp(300px, 50vh, 400px);
         position: relative;
         background-image: linear-gradient(90deg, rgba(75, 40, 196, .9) 0%, rgba(139, 63, 174, .9) 100%);
         text-align: center;
         vertical-align: middle;
+    }
+
+    ol {
+        text-align: right;
     }
 
     .pink-caption {
@@ -53,8 +57,27 @@
         text-align: center;
 
         section {
-            padding-block: 1rem;
+            padding: 2rem;
             direction: rtl;
         }
+
+        .pink-caption {
+            margin: 2rem auto;
+        }
+    }
+
+
+    .main-image {
+        margin: 2rem auto;
+        width: clamp(200px, 80%, 500px);
+        background-color: white;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 0 50% 0 50%;
+
+        img {
+            width: 100%;
+            padding: 2rem;
+        }
+
     }
 }

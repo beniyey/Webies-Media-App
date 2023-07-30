@@ -1,15 +1,18 @@
-.Development .top-floater {
+.Service-Page .top-floater {
   height: clamp(300px, 50vh, 400px);
   position: relative;
   background-image: linear-gradient(90deg, rgba(75, 40, 196, 0.9) 0%, rgba(139, 63, 174, 0.9) 100%);
   text-align: center;
   vertical-align: middle;
 }
-.Development .pink-caption {
+.Service-Page ol {
+  text-align: right;
+}
+.Service-Page .pink-caption {
   color: white;
   background-color: #ff57a4;
 }
-.Development .top-floater-bg-image {
+.Service-Page .top-floater-bg-image {
   background-image: url("../../../Assets/Images/resources/israel-andrade-YI_9SivVt_s-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -19,11 +22,11 @@
   z-index: -1;
   position: absolute;
 }
-.Development .top-floater-image img {
+.Service-Page .top-floater-image img {
   width: clamp(200px, 80%, 80%);
   aspect-ratio: 1/1;
 }
-.Development .header-text {
+.Service-Page .header-text {
   color: white;
   margin: auto;
   height: 100%;
@@ -32,7 +35,7 @@
   align-items: center;
   justify-content: center;
 }
-.Development .text-content {
+.Service-Page .text-content {
   color: rgb(39, 11, 85);
   text-align: center;
   padding: 3rem;
@@ -43,7 +46,21 @@
   font-size: 20px;
   text-align: center;
 }
-.Development .text-content section {
-  padding-block: 1rem;
+.Service-Page .text-content section {
+  padding: 2rem;
   direction: rtl;
+}
+.Service-Page .text-content .pink-caption {
+  margin: 2rem auto;
+}
+.Service-Page .main-image {
+  margin: 2rem auto;
+  width: clamp(200px, 80%, 500px);
+  background-color: white;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0 50% 0 50%;
+}
+.Service-Page .main-image img {
+  width: 100%;
+  padding: 2rem;
 }/*# sourceMappingURL=Development.css.map */

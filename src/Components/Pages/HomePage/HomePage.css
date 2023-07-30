@@ -147,6 +147,7 @@
   }
   .HomePage .what-we-do .what-we-do-summary {
     flex-direction: row;
+    align-items: start;
   }
   .HomePage .what-we-do .bouncing-img {
     width: clamp(200px, 45%, 500px);
