@@ -12,8 +12,8 @@ const navItems = [
     { display: 'בית', value: "home" },
     { display: 'שירותים', value: "services" },
     { display: 'קצת עלינו', value: "about" },
-    { display: 'צור קשר', value: "contact" },
     { display: 'העבודות שלנו', value: "portfolio" },
+    { display: 'צור קשר', value: "contact" },
 ];
 
 const services = [
@@ -23,12 +23,13 @@ const services = [
     { display: 'תחזוקת אתרים', value: "maintanance" },
 ];
 
-const ContactButton = styled(Button)({
+const ContactButton = styled(Link)({
     transition: 'all 0.3s',
     color: 'white',
     backgroundColor: "#E95A9C",
     padding: "10px 30px",
     borderRadius: "30px",
+    textDecoration: "none",
     '&:hover': {
         backgroundColor: "white",
         color: "#E95A9C",
@@ -48,11 +49,7 @@ const NavigationButton = styled(Link)({
 })
 
 export default function Header() {
-    let timer: any;
-
     const location = useLocation()
-
-    const [serviceTimer, setserviceTimer] = React.useState<any>(null)
 
     const [active, setActive] = React.useState("home")
 
@@ -89,7 +86,9 @@ export default function Header() {
 
     return (
         <div className="Header">
-            <img className="logo" src={logo} />
+            <Link rel="stylesheet" to="/home" >
+                <img className="logo" src={logo} />
+            </Link>
 
             {/* normal screen */}
             <div className="links regular">
@@ -100,7 +99,7 @@ export default function Header() {
                         </NavigationButton>
                         {
                             item.value == "services" &&
-                            <div  id="services-select" className="services-select dropdown animate__animated">
+                            <div id="services-select" className="services-select dropdown animate__animated">
                                 {
                                     services.map((service) => (
                                         <NavigationButton className={`service-route animate__animated`} onClick={() => onRouteChange(service.value)} to={service.value} key={service.display}>
@@ -126,7 +125,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <ContactButton className="contact-button" variant="contained" href="#contained-buttons" endIcon={<ArrowForwardIosIcon />}>
+            <ContactButton className="contact-button" to="/contact">
                 <b>בואו נדבר</b>
             </ContactButton>
 
