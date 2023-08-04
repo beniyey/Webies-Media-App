@@ -1,6 +1,7 @@
 import "./Development.css"
 import mainImg from "../../../Assets/Images/resources/development-page.jpg"
 import React from "react"
+import Contact from "../../Pages/Contact/Contact"
 
 
 export default function Development() {
@@ -51,6 +52,11 @@ export default function Development() {
                 <section>
                     בוא נתפס את ההזדמנות ונשפר יחד את הנוכחות המקוונת שלך!
                 </section>
+            </div>
+
+            
+            <div className="contact-page">
+                <Contact />
             </div>
 
         </div>

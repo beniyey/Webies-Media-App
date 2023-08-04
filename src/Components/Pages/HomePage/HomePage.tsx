@@ -13,6 +13,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 import Contact from "../Contact/Contact";
+import routingService from "../../../Services/RoutingService";
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -46,6 +47,7 @@ const MoreInfoButton = styled(Button)({
 
 function HomePage(): JSX.Element {
 
+    const navigate = useNavigate()
 
     const options = {
         rootMargin: "0px",
@@ -86,8 +88,6 @@ function HomePage(): JSX.Element {
             }
         })
     }, options)
-
-    const navigate = useNavigate()
 
     function rotateCarousel() {
         if (carousel.current) {
@@ -191,6 +191,8 @@ function HomePage(): JSX.Element {
     }, [])
 
 
+
+
     return (
         <div className="HomePage">
 
@@ -289,7 +291,7 @@ function HomePage(): JSX.Element {
                         <img className="portfolio-image" src={crispyMockup} alt="" />
                     </div>
                 </div>
-                <PinkButton className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
+                <PinkButton onClick={() => navigate("/portfolio")} className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
             </div>
 
             <div className="contact-page">

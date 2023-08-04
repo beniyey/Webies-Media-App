@@ -1,6 +1,7 @@
 import "./Social.css"
 import mainImg from "../../../Assets/Images/resources/development-page.jpg"
 import React from "react"
+import Contact from "../../Pages/Contact/Contact"
 
 
 export default function Social() {
@@ -50,6 +51,10 @@ export default function Social() {
                 <section>
                     המדיה החברתית היא כלי עצום לשיווק וקידמה, ובידינו הידע והיכולת לנהל עבורך חשבונות ברמה הגבוהה ביותר. נבנה עבורך אסטרטגיה ייעודית ויחודית שתכניס אותך לעולם הדיגיטלי בצורה חזקה ומוצלחת. אתך בכל צעד, להצלחה ולהגדלה!
                 </section>
+            </div>
+
+            <div className="contact-page">
+                <Contact />
             </div>
 
         </div>

@@ -4,6 +4,7 @@ import { styled } from "@mui/system";
 import { useEffect, useRef } from "react";
 import projectsJSON from "../../Data/projects";
 import ProjectCard from "../../Cards/ProjectCard/ProjectCard";
+import Contact from "../Contact/Contact";
 
 const ArrowDownIcon = styled(KeyboardDoubleArrowDownIcon)({})
 
@@ -46,6 +47,10 @@ function Portfolio(): JSX.Element {
                         )
                     })
                 }
+            </div>
+
+            <div className="contact-page">
+                <Contact />
             </div>
         </div>
     );

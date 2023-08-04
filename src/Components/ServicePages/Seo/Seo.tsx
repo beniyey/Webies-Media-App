@@ -1,6 +1,7 @@
 import "./Seo.css"
 import mainImg from "../../../Assets/Images/resources/development-page.jpg"
 import React from "react"
+import Contact from "../../Pages/Contact/Contact"
 
 
 export default function Seo() {
@@ -55,6 +56,9 @@ export default function Seo() {
                 </section>
             </div>
 
+            <div className="contact-page">
+                <Contact />
+            </div>
         </div>
     )
 }

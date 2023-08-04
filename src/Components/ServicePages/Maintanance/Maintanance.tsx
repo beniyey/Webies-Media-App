@@ -1,6 +1,7 @@
 import "./Maintanance.css"
 import mainImg from "../../../Assets/Images/resources/development-page.jpg"
 import React from "react"
+import Contact from "../../Pages/Contact/Contact"
 
 
 export default function Maintanance() {
@@ -46,6 +47,10 @@ export default function Maintanance() {
                 <section>
                     בידינו הידע והניסיון הרב בייצוב, תחזוקה ושדרוג של אתרים. אנו נעבוד בצמוד עם צוות העיצוב והפיתוח שלך כדי לוודא שהאתר שלך ימשיך להתקדם ולהתפתח בצעדי ענק.
                 </section>
+            </div>
+
+            <div className="contact-page">
+                <Contact />
             </div>
 
         </div>

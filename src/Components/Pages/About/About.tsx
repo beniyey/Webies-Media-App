@@ -4,6 +4,8 @@ import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Contact from "../Contact/Contact";
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -24,6 +26,9 @@ const PinkButton = styled(Button)({
 
 
 function About(): JSX.Element {
+
+    const navigate = useNavigate();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
@@ -51,7 +56,7 @@ function About(): JSX.Element {
                             ולקבל עזרה והסברים על הפרוייקט שלכם.
                             כמו כן, נשמח לשמוע מכם ולהתאים את הפרוייקט לצרכיך
                             ולצרכי העסק שלכם.                         </div>
-                        <PinkButton startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
+                        <PinkButton onClick={()=>navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
                     </div>
                 </div>
             </div>
@@ -90,6 +95,10 @@ function About(): JSX.Element {
                     </section>
 
                 </div>
+            </div>
+
+            <div className="contact-page">
+                <Contact />
             </div>
         </div>
     );
