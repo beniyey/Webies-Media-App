@@ -17,6 +17,7 @@ const navItems = [
 ];
 
 const services = [
+    { display: 'כל השירותים', value: "services" },
     { display: 'עיצוב ופיתוח אתרים', value: "development" },
     { display: 'קידום אתרים', value: "seo" },
     { display: 'מדיה חברתית', value: "social" },
@@ -59,6 +60,7 @@ export default function Header() {
 
     function onRouteChange(route: string) {
         setActive(route)
+        console.log(route)
     }
 
     function toggleMenu(event?: SyntheticEvent, active: boolean = false) {
@@ -102,7 +104,7 @@ export default function Header() {
                             <div id="services-select" className="services-select dropdown animate__animated">
                                 {
                                     services.map((service) => (
-                                        <NavigationButton className={`service-route animate__animated`} onClick={() => onRouteChange(service.value)} to={service.value} key={service.display}>
+                                        <NavigationButton className={`${active == service.value ? "active" : ""} service-route`} onClick={() => onRouteChange(service.value)} to={service.value} key={service.display}>
                                             {service.display}
                                         </NavigationButton>
                                     ))
@@ -118,8 +120,8 @@ export default function Header() {
                 <MenuIcon fontSize="large" onClick={toggleMenu} sx={{ color: "white", alignItems: "center" }} />
                 <div id="mobile-buttons" className="mobile-buttons animate__animated dropdown">
                     {navItems.map((item, index) => (
-                        <NavigationButton className={` route mobile-route animate__animated`} onClick={(event) => { onRouteChange(item.value); toggleMenu(event, true) }} to={item.value} key={item.display} sx={{ animationDelay: `0.${index}s` }}>
-                            {item.display}
+                        <NavigationButton className={`route mobile-route animate__animated`} onClick={(event) => { onRouteChange(item.value); toggleMenu(event, true) }} to={item.value} key={item.display} sx={{ animationDelay: `0.${index}s` }}>
+                           <span className={`${active == item.value ? "active" : ""}`} >{item.display}</span>
                         </NavigationButton>
                     ))}
                 </div>

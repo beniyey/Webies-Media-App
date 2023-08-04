@@ -40,7 +40,7 @@
   color: #E95A9C;
 }
 .Header .active {
-  color: #E95A9C;
+  color: #E95A9C !important;
 }
 .Header .logo {
   grid-area: logo;

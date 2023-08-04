@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import "./HomePage.css";
 import { styled } from "@mui/system";
-import mainBannerImg from "../../../Assets/Images/backgrounds/top-banner-home-page.jpeg"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import AboutFloater from "../../../Assets/Images/resources/photo-main-page.png"
 import OfferFloater from "../../../Assets/Images/resources/what-we-offer.png"
@@ -13,7 +12,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 import Contact from "../Contact/Contact";
-import routingService from "../../../Services/RoutingService";
+import {Helmet} from "react-helmet";
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -167,8 +166,7 @@ function HomePage(): JSX.Element {
     }
 
     useEffect(() => {
-
-        //window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         containersArr.forEach((element, index) => {
             if (element.current) {
                 observer.observe(element.current)
@@ -194,10 +192,36 @@ function HomePage(): JSX.Element {
 
 
     return (
-        <div className="HomePage">
+        <article className="HomePage">
+
+            <Helmet>
+                {/* SEO Meta Tags */}
+                <meta name="description" content="We are a web development agency based Israel, offering web design, web development, SEO, web site maintenance, and social media services." />
+                <meta name="keywords" content="web development, design, SEO, maintenance, social media, Tel Aviv, Israel" />
+                <meta name="author" content="Your Web Dev Agency" />
+                <meta name="robots" content="index, follow" />
+
+                {/* OpenGraph Meta Tags */}
+                <meta property="og:title" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta property="og:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.youragencywebsite.com/" />
+                <meta property="og:image" content="https://www.youragencywebsite.com/og-image.jpg" /> {/* Replace with your actual image URL */}
+                <meta property="og:image:alt" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta property="og:site_name" content="Your Web Dev Agency" />
+
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta name="twitter:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
+                <meta name="twitter:image" content="https://www.youragencywebsite.com/twitter-image.jpg" /> {/* Replace with your actual image URL */}
+                <meta name="twitter:image:alt" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta name="twitter:site" content="@youragency" /> {/* Replace with your Twitter handle */}
+                <meta name="twitter:creator" content="@youragency" /> {/* Replace with your Twitter handle */}
+            </Helmet>
 
             {/* Main Banner */}
-            <div ref={topBanner} className="main-banner">
+            <section ref={topBanner} className="main-banner">
                 <div className="animate__animated top-banner-text invisible">
                     <h1>
                         ממשו את פוטנציאל
@@ -211,13 +235,13 @@ function HomePage(): JSX.Element {
 
                     <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
                 </div>
-            </div>
+            </section>
 
-            <div ref={carousel} className="brand-carousel">
+            <section ref={carousel} className="brand-carousel">
                 <BrandCarousel />
-            </div>
+            </section>
 
-            <div ref={whatWeDo} className="what-we-do">
+            <section ref={whatWeDo} className="what-we-do">
                 <div className="pink-caption animate__animated">
                     <p>מה אנחנו עושים?</p>
                 </div>
@@ -228,9 +252,9 @@ function HomePage(): JSX.Element {
                         return <HomePageServiceCard key={i} index={i + 1} img={require(`../../../Assets/Images/shapes/service-i-${i + 1}.png`)} />
                     })}
                 </div>
-            </div>
+            </section>
 
-            <div ref={aboutUs} className="about section" >
+            <section ref={aboutUs} className="about section" >
 
                 <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
 
@@ -249,9 +273,9 @@ function HomePage(): JSX.Element {
                     </div>
                 </div>
 
-            </div >
+            </section >
 
-            <div ref={whatWeDoFloater} className="services section" >
+            <section ref={whatWeDoFloater} className="services section" >
                 <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
                 <div className="services-content-parent">
                     <div className="pink-caption">
@@ -272,9 +296,9 @@ function HomePage(): JSX.Element {
                         </span>
                         אנחנו נעמיד ברשותך כלים לבקרת ביצועי האתר שלך, ונעזור לך להבין את המשתמשים שלך ואת הפעילות שלהם באתר שלך, בשביל לספק להם בעתיד חווית משתמש טובה יותר, ולהגדיל את הכנסות העסק שלך                    </div>
                 </div>
-            </div >
+            </section >
 
-            <div className="featured-projects" ref={topProjects}>
+            <section className="featured-projects" ref={topProjects}>
                 <div className="pink-caption">
                     <p>כנסו והתרשמו</p>
                 </div>
@@ -292,12 +316,12 @@ function HomePage(): JSX.Element {
                     </div>
                 </div>
                 <PinkButton onClick={() => navigate("/portfolio")} className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
-            </div>
+            </section>
 
-            <div className="contact-page">
+            <section className="contact-page">
                 <Contact />
-            </div>
-        </div>
+            </section>
+        </article>
     );
 }
 export default HomePage;
