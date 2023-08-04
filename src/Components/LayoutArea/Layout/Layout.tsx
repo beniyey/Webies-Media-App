@@ -30,8 +30,6 @@ function Layout(): JSX.Element {
             <Copyrights>
                 Designed and developed by <span style={{ color: "#ff57a4" }}>Webies Media</span> © 2023 All rights reserved.
             </Copyrights>
-
-
         </div>
     );
 }

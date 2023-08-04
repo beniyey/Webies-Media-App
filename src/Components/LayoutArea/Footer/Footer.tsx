@@ -20,7 +20,7 @@ function Footer(): JSX.Element {
     return (
         <div className="Footer">
             <div className="parent">
-                <img className="child" width={"220px"} src={pinkLogo} alt="a pink logo of webies media" />
+                <img loading="lazy" className="child" width={"220px"} src={pinkLogo} alt="a pink logo of webies media" />
             </div>
             <div className="parent">
                 <div className="contact-footer-wrapper child">
@@ -43,7 +43,7 @@ function Footer(): JSX.Element {
                 </div>
             </div>
             <div className="parent">
-                <img className="child contact-img" src={letsTalkImage} alt="" />
+                <img loading="lazy" className="child contact-img" src={letsTalkImage} alt="" />
             </div>
         </div>
     );

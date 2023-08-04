@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -33,10 +34,41 @@ function About(): JSX.Element {
         window.scrollTo(0, 0);
     }, [])
     return (
-        <div className="About">
-            <div className="top-floater">
+        <article className="About">
+
+            <HelmetProvider>
+                <Helmet>
+                    {/* SEO Meta Tags */}
+                    <title>Webies || קצת עלינו</title>
+                    <meta name="description" content="אנחנו סטודיו לפיתוח אתרים בישראל עם תשוקה רבה לתחום ורצון לעזור לעסקים להתקדם לעבר עידן הטכנולוגיה ולהבדיל אתם מהמתחרים." />
+                    <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
+                    <meta name="author" content="Webies Media" />
+                    <meta name="robots" content="index, follow" />
+
+                    {/* OpenGraph Meta Tags */}
+                    <meta property="og:title" content="Webies Media - ישראל" />
+                    <meta property="og:description" content="אנחנו סטודיו לפיתוח אתרים בתל אביב, ישראל, עם תשוקה רבה לתחום ורצון לעזור לעסקים להתקדם לעבר עידן הטכנולוגיה ולהבדיל אתם מהמתחרים." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.webies-media.com/" />
+                    <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta property="og:site_name" content="Webies Media" />
+
+                    {/* Twitter Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Webies Media - ישראל" />
+                    <meta name="twitter:description" content="אנחנו סטודיו לפיתוח אתרים בתל אביב, ישראל, עם תשוקה רבה לתחום ורצון לעזור לעסקים להתקדם לעבר עידן הטכנולוגיה ולהבדיל אתם מהמתחרים." />
+                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                </Helmet>
+            </HelmetProvider>
+
+
+            <section className="top-floater">
                 {/* <div className="top-floater-image"> */}
-                <img className="top-floater-image" src={AboutFloater} alt="floating image of our team" />
+                <img loading="lazy" className="top-floater-image" src={AboutFloater} alt="floating image of our team" />
                 {/* </div> */}
                 <div className="">
                     <div className="top-floater-text">
@@ -56,11 +88,11 @@ function About(): JSX.Element {
                             ולקבל עזרה והסברים על הפרוייקט שלכם.
                             כמו כן, נשמח לשמוע מכם ולהתאים את הפרוייקט לצרכיך
                             ולצרכי העסק שלכם.                         </div>
-                        <PinkButton onClick={()=>navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
+                        <PinkButton onClick={() => navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
                     </div>
                 </div>
-            </div>
-            <div className="about-content">
+            </section>
+            <article className="about-content">
                 <div className="pink-caption">
                     <p>על צוות הפיתוח ועיצוב שלנו</p>
                 </div>
@@ -95,12 +127,12 @@ function About(): JSX.Element {
                     </section>
 
                 </div>
-            </div>
+            </article>
 
-            <div className="contact-page">
+            <section className="contact-page">
                 <Contact />
-            </div>
-        </div>
+            </section>
+        </article>
     );
 }
 

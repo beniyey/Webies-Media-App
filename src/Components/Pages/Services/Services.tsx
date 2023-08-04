@@ -11,6 +11,7 @@ import Diversity1Icon from '@mui/icons-material/Diversity1';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const RightArrowIcon = styled(ArrowCircleRightIcon)({
     color: "#E95A9C",
@@ -50,10 +51,40 @@ function Services(): JSX.Element {
     }, [])
 
     return (
-        <div className="Services">
-            <div className="top-floater">
+        <article className="Services">
+            <HelmetProvider>
+                <Helmet>
+                    {/* SEO Meta Tags */}
+                    <title>Webies || השירותים שלנו</title>
+                    <meta name="description" content="אנחנו סטודיו לפיתוח אתרים בישראל שמציע שירותי עיצוב אתרים, פיתוח אתרים, קידום אתרים, תחזוקת אתרים וניהול רשתות חברתיות." />
+                    <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
+                    <meta name="author" content="Webies Media" />
+                    <meta name="robots" content="index, follow" />
+
+                    {/* OpenGraph Meta Tags */}
+                    <meta property="og:title" content="Webies Media - ישראל" />
+                    <meta property="og:description" content="אנחנו סטודיו לפיתוח אתרים בתל אביב, ישראל, המציע שירותי עיצוב, פיתוח, קידום, תחזוקה וניהול רשתות חברתיות." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.webies-media.com/" />
+                    <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta property="og:site_name" content="Webies Media" />
+
+                    {/* Twitter Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Webies Media - ישראל" />
+                    <meta name="twitter:description" content="אנחנו סטודיו לפיתוח אתרים בתל אביב, ישראל, המציע שירותי עיצוב, פיתוח, קידום, תחזוקה וניהול רשתות חברתיות." />
+                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                </Helmet>
+            </HelmetProvider>
+
+
+            <section className="top-floater">
                 <div className="top-floater-image">
-                    <img src={OfferFloater} className="" alt="floating image of our team" />
+                    <img loading="lazy" src={OfferFloater} className="" alt="floating image of our team" />
                 </div>
                 <div className="top-floater-text">
                     <div className="pink-caption">
@@ -78,9 +109,9 @@ function Services(): JSX.Element {
                         ולצרכי העסק שלכם.                         </div>
                     <PinkButton onClick={() => navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
                 </div>
-            </div>
+            </section>
 
-            <div className="services-wrapper">
+            <section className="services-wrapper">
                 <div className="services-text">
                     <div className="pink-caption">
                         <p>השירותים שלנו</p>
@@ -135,108 +166,13 @@ function Services(): JSX.Element {
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div className="contact-page">
+            </section>
+
+            <section className="contact-page">
                 <Contact />
-            </div>
-        </div>
+            </section>
+        </article>
     );
 }
 
 export default Services;
-
-
-
-
-
-
-
-
-
-//        <div className="Services">
-{/* <div className="top-floater">
-<div className="top-floater-image parent">
-    <img src={OfferFloater} className="child" alt="floating image of our team" />
-</div>
-<div className="parent">
-    <div className="top-floater-text child">
-        <div className="pink-caption">
-            <p>קצת עלינו</p>
-        </div>
-        <h1 style={{ fontSize: "50px", color: "#270B55", whiteSpace: "nowrap" }}>אנחנו מציעים את הכלים <br /><span style={{ fontFamily: "fredoka-light" }}>הטובים ביותר לעסק</span> שלכם</h1>
-        <span className="internal-section-spacer" />
-        <div className="data-section-content">
-            <span className="data-section-content-inner">
-                סטטיסטיקה וביצועי האתר
-            </span>
-            אנחנו צוות של מפתחים ומעצבים עם תשוקה רבה לתחום
-            והמון רצון לעזור לעסקים להתקדם לעבר עידן הטכנולוגיה
-            ולהתקדם בתחום בו הם עוסקים.                            <br />
-            <span className="data-section-content-inner">
-                אנחנו איתכם בכל צעד בדרך להצלחה
-            </span>
-            <br />
-            כל צעד איתנו יהיה בתיאום מלא ותוכלו לפנות אלינו בכל עת
-            ולקבל עזרה והסברים על הפרוייקט שלכם.
-            כמו כן, נשמח לשמוע מכם ולהתאים את הפרוייקט לצרכיך
-            ולצרכי העסק שלכם.                         </div>
-        <PinkButton startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
-    </div>
-</div>
-</div>
-
-<div className="services-wrapper">
-<div className="top-floater-text">
-    <div className="pink-caption">
-        <p>קצת עלינו</p>
-    </div>
-    <h1 style={{ fontSize: "50px", color: "#270B55", whiteSpace: "nowrap" }}>מעלים את העסק שלך לדיגיטל <br /> <span style={{ fontFamily: "fredoka-light" }}>עם הטובים</span> ביותר</h1>
-    <span className="internal-section-spacer"></span>
-    <div className="services-cards">
-        <div className="service-card">
-            <div className="service-card-background"></div>
-            <DashboardOutlinedIcon sx={{fontSize:"35px", color:"#E95A9C"}}/>
-            <h1>
-                קידום אתרים
-            </h1>
-            <span>
-                אנחנו נעניק לאתר שלכם חשיפה גבוה יותר במנועי החיפוש, ונדאג לכך שלקוחות יוכלו למצוא אתכם יוצר בקלות במרחב הדיגיטלי
-            </span>
-            <Button sx={{borderRadius:"100%"}}><RightArrowIcon /></Button>
-        </div>
-        <div className="service-card">
-            <div className="service-card-background"></div>
-            <DesignServicesIcon sx={{fontSize:"35px", color:"#E95A9C"}} />
-            <h1>
-                עיצוב ופיתוח אתרים
-
-            </h1>
-            <span>
-                תוך שימוש בטכנולוגיות המתקדמות ביותר, אנחנו נעצב נפתח ונעלה אתר לעסק שלכם                            </span>
-            <Button sx={{borderRadius:"100%"}}><RightArrowIcon /></Button>
-        </div>
-        <div className="service-card">
-            <div className="service-card-background"></div>
-            <EngineeringIcon sx={{fontSize:"35px", color:"#E95A9C"}} />
-            <h1>
-                מדיה חברתית
-            </h1>
-            <span>
-                אנחנו נקים לכם עמוד instagram/Facebook שיתאים לדרישות שלכם, וינגיש את השירותים שלכם ללקוחות                            </span>
-            <Button sx={{borderRadius:"100%"}}><RightArrowIcon /></Button>
-        </div>
-        <div className="service-card">
-            <div className="service-card-background"></div>
-            <Diversity1Icon sx={{fontSize:"35px", color:"#E95A9C"}} />
-            <h1>
-                תחזוקת אתרים
-            </h1>
-            <span>
-                בכל מקרה שאתר שלכם דורש תחזוקה או חידוש של התוכן, אנחנו נדאג לעזור לכם ולבצע את השינויים הנדרשים בצורה הטובה ביותר                            </span>
-            <Button sx={{borderRadius:"100%"}}><RightArrowIcon /></Button>
-        </div>
-    </div>
-</div>
-</div>
-</div> */}

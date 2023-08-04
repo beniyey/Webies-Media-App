@@ -5,7 +5,7 @@ function HomePageServiceCard(props: { img: string, index: number }): JSX.Element
         <div className="HomePageServiceCard invisible animate__animated">
             <div className="service-card">
                 <div className="row header">
-                    <img src={props.img} alt="image of improving web" />
+                    <img loading="lazy" src={props.img} alt="image of improving web" />
                     {props.index === 1 && <div className="service-text">
                         <span className="upper-text">תחזוקת אתרים</span>
                         <br />

@@ -5,6 +5,7 @@ import ArrowBackwardIosIcon from '@mui/icons-material/ArrowBackIosNew';
 import "./Contact.css";
 import Confetti from 'react-confetti'
 import { useEffect, useState } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const SendButton = styled(Button)({
     margin: "20px auto",
@@ -27,9 +28,9 @@ function Contact(): JSX.Element {
     const [showConfetti, setShowConfetti] = useState(false);
     const [pieces, setPieces] = useState(200);
 
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0);
-    },[])
+    }, [])
 
     function send(data: any) {
         console.log(data);
@@ -47,8 +48,37 @@ function Contact(): JSX.Element {
 
     return (
         <div className="Contact parent">
+            <HelmetProvider>
+                <Helmet>
+                    {/* SEO Meta Tags */}
+                    <title>Webies || צור קשר</title>
+                    <meta name="description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                    <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
+                    <meta name="author" content="Webies Media" />
+                    <meta name="robots" content="index, follow" />
+
+                    {/* OpenGraph Meta Tags */}
+                    <meta property="og:title" content="Webies Media - צור קשר" />
+                    <meta property="og:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.webies-media.com/" />
+                    <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta property="og:site_name" content="Webies Media" />
+
+                    {/* Twitter Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Webies Media - צור קשר" />
+                    <meta name="twitter:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                </Helmet>
+            </HelmetProvider>
+
             <div className="child overlay"></div>
-            <div className="child formData">
+            <section className="child formData">
                 <h1>בואו ניהיה בקשר!</h1>
                 <span>השאירו לנו פרטים והצוות המסור שלנו יחזור אליכם בהקדם</span>
                 <form onSubmit={handleSubmit(send)}>
@@ -97,11 +127,10 @@ function Contact(): JSX.Element {
 
                     <SendButton type="submit" startIcon={<ArrowBackwardIosIcon />}>שליחה</SendButton>
                 </form>
-            </div>
-            <div className="successfulForm">
+            </section>
+            <section className="successfulForm">
                 {showConfetti && <Confetti numberOfPieces={pieces} />}
-                {/* <Confetti gravity={0.2} numberOfPieces={pieces}/> */}
-            </div>
+            </section>
         </div>
     );
 }

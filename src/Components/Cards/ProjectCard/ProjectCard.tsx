@@ -21,7 +21,7 @@ function ProjectCard(props: ProjectCardProps): JSX.Element {
 
     return (
         <div ref={wrapper} className={`ProjectCard parent`}>
-            <img src={require("../../../Assets/Images/portfolio/" + props.projectObj.img)} />
+            <img loading="lazy" src={require("../../../Assets/Images/portfolio/" + props.projectObj.img)} alt={"image of "+props.projectObj.name} />
             
             <div ref={content} className="content">
                 <span>{props.projectObj.name}</span>

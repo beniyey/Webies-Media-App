@@ -8,11 +8,11 @@ import HomePageServiceCard from "../../Cards/HomePageServiceCard/HomePageService
 import foodiesMockup from "../../../Assets/Images/portfolio/foodies-mockup-1.webp"
 import havanaMockup from "../../../Assets/Images/portfolio/havana-mockup-1(1).webp"
 import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.webp"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense  } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 import Contact from "../Contact/Contact";
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const PinkButton = styled(Button)({
     transition: 'all 0.3s',
@@ -193,33 +193,34 @@ function HomePage(): JSX.Element {
 
     return (
         <article className="HomePage">
+            <HelmetProvider>
+                <Helmet>
+                    {/* SEO Meta Tags */}
+                    <title>Webies || סטודיו לפיתוח, עיצוב וקידום אתרים</title>
+                    <meta name="description" content="אנחנו סוכנות לפיתוח אתרים בישראל, המציעה עיצוב אתרים, פיתוח אתרים, קידום אתרים, תחזוקת אתרים ושירותי מדיה חברתית." />
+                    <meta name="keywords" content="שירותים" />
+                    <meta name="author" content="webies media" />
+                    <meta name="robots" content="index, follow" />
 
-            <Helmet>
-                {/* SEO Meta Tags */}
-                <title>Webies || סטודיו לפיתוח, עיצוב וקידום אתרים</title>
-                <meta name="description" content="We are a web development agency based Israel, offering web design, web development, SEO, web site maintenance, and social media services." />
-                <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים,ניהול רשתות חברתיות, ניהול אתרים" />
-                <meta name="author" content="webies media" />
-                <meta name="robots" content="index, follow" />
+                    {/* OpenGraph Meta Tags */}
+                    <meta property="og:title" content="webies media - Israel" />
+                    <meta property="og:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.webies-media.com/" />
+                    <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta property="og:image:alt" content="webies media - Tel Aviv, Israel" />
+                    <meta property="og:site_name" content="webies media" />
 
-                {/* OpenGraph Meta Tags */}
-                <meta property="og:title" content="webies media - Israel" />
-                <meta property="og:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.webies-media.com/" />
-                <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
-                <meta property="og:image:alt" content="webies media - Tel Aviv, Israel" />
-                <meta property="og:site_name" content="webies media" />
-
-                {/* Twitter Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Webeis media - Israel" />
-                <meta name="twitter:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
-                <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
-                <meta name="twitter:image:alt" content="webies media - Tel Aviv, Israel" />
-                <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
-                <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
-            </Helmet>
+                    {/* Twitter Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Webeis media - Israel" />
+                    <meta name="twitter:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
+                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                    <meta name="twitter:image:alt" content="webies media - Tel Aviv, Israel" />
+                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                </Helmet>
+            </HelmetProvider>
 
             {/* Main Banner */}
             <section ref={topBanner} className="main-banner">
@@ -237,7 +238,7 @@ function HomePage(): JSX.Element {
                     <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
                 </div>
             </section>
-
+            
             <section ref={carousel} className="brand-carousel">
                 <BrandCarousel />
             </section>
@@ -257,7 +258,7 @@ function HomePage(): JSX.Element {
 
             <section ref={aboutUs} className="about section" >
 
-                <img src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
+                <img loading="lazy" src={AboutFloater} alt="bouncing image of workers" className="bouncing-img" />
 
                 <div className="about-content-parent">
                     <div className="pink-caption">
@@ -277,7 +278,7 @@ function HomePage(): JSX.Element {
             </section >
 
             <section ref={whatWeDoFloater} className="services section" >
-                <img src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
+                <img loading="lazy" src={OfferFloater} alt="bouncing image of workers" className="bouncing-img" />
                 <div className="services-content-parent">
                     <div className="pink-caption">
                         <p>מה אנחנו עושים</p>
@@ -307,13 +308,13 @@ function HomePage(): JSX.Element {
                 <span className="internal-section-spacer"></span>
                 <div className="portfolio-summary-parent">
                     <div className="project-summary invisible animate__animated">
-                        <img className="portfolio-image" src={foodiesMockup} alt="" />
+                        <img loading="lazy" className="portfolio-image" src={foodiesMockup} alt="our project for foodies market" />
                     </div>
                     <div style={{ animationDelay: "0.2s" }} className="project-summary invisible animate__animated">
-                        <img className="portfolio-image" src={havanaMockup} alt="" />
+                        <img loading="lazy" className="portfolio-image" src={havanaMockup} alt="our project for havana vacations aggregator" />
                     </div>
                     <div style={{ animationDelay: "0.4s" }} className="project-summary invisible animate__animated">
-                        <img className="portfolio-image" src={crispyMockup} alt="" />
+                        <img loading="lazy" className="portfolio-image" src={crispyMockup} alt="our project for crispy pizza" />
                     </div>
                 </div>
                 <PinkButton onClick={() => navigate("/portfolio")} className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>

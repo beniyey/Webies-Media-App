@@ -2,12 +2,42 @@ import "./Maintanance.css"
 import mainImg from "../../../Assets/Images/resources/development-page.webp"
 import React from "react"
 import Contact from "../../Pages/Contact/Contact"
+import { Helmet, HelmetProvider } from "react-helmet-async"
 
 
 export default function Maintanance() {
     return (
-        <div className="Maintanance Service-Page">
-            <div className="top-floater">
+        <article className="Maintanance Service-Page">
+            <HelmetProvider>
+                <Helmet>
+                    {/* SEO Meta Tags */}
+                    <title>Webies || תחזוקה וניהול אתרים</title>
+                    <meta name="description" content="אנחנו סטודיו לפיתוח אתרים בישראל, מפתחים אתרים מתקדמים ומעוצבים ברמה הגבוהה ביותר. ייעוץ ותכנון אישי לפי דרישות העסק שלך." />
+                    <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
+                    <meta name="author" content="Webies Media" />
+                    <meta name="robots" content="index, follow" />
+
+                    {/* OpenGraph Meta Tags */}
+                    <meta property="og:title" content="Webies Media - פיתוח אתרים" />
+                    <meta property="og:description" content="אנחנו סטודיו לפיתוח אתרים בישראל, מפתחים אתרים מתקדמים ומעוצבים ברמה הגבוהה ביותר. ייעוץ ותכנון אישי לפי דרישות העסק שלך." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.webies-media.com/development" /> {/* Replace with your actual URL */}
+                    <meta property="og:image" content="https://www.webies-media.com/static/media/development-image.webp" /> {/* Replace with your actual image URL */}
+                    <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta property="og:site_name" content="Webies Media" />
+
+                    {/* Twitter Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Webies Media - פיתוח אתרים" />
+                    <meta name="twitter:description" content="אנחנו סטודיו לפיתוח אתרים בישראל, מפתחים אתרים מתקדמים ומעוצבים ברמה הגבוהה ביותר. ייעוץ ותכנון אישי לפי דרישות העסק שלך." />
+                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/development-image.webp" /> {/* Replace with your actual image URL */}
+                    <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
+                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                </Helmet>
+            </HelmetProvider>
+
+            <section className="top-floater">
                 <div className="top-floater-bg-image"></div>
                 <div className="top-floater-bg-image-overlay"></div>
 
@@ -16,9 +46,9 @@ export default function Maintanance() {
                         תחזוקת אתרים
                     </h1>
                 </div>
-            </div>
+            </section>
 
-            <div className="text-content">
+            <article className="text-content">
                 <div className="pink-caption">
                     <p>שירותי תחזוקה לאתרים </p>
                 </div>
@@ -47,12 +77,12 @@ export default function Maintanance() {
                 <section>
                     בידינו הידע והניסיון הרב בייצוב, תחזוקה ושדרוג של אתרים. אנו נעבוד בצמוד עם צוות העיצוב והפיתוח שלך כדי לוודא שהאתר שלך ימשיך להתקדם ולהתפתח בצעדי ענק.
                 </section>
-            </div>
+            </article>
 
-            <div className="contact-page">
+            <section className="contact-page">
                 <Contact />
-            </div>
+            </section>
 
-        </div>
+        </article>
     )
 }
