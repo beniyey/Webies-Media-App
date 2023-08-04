@@ -1,5 +1,5 @@
 import "./Development.css"
-import mainImg from "../../../Assets/Images/resources/development-page.jpg"
+import mainImg from "../../../Assets/Images/resources/development-page.webp"
 import React from "react"
 import Contact from "../../Pages/Contact/Contact"
 

@@ -1,5 +1,5 @@
 import "./Services.css";
-import OfferFloater from "../../../Assets/Images/resources/what-we-offer.png";
+import OfferFloater from "../../../Assets/Images/resources/what-we-offer.webp";
 import { styled } from "@mui/material/styles";
 import { Button } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';

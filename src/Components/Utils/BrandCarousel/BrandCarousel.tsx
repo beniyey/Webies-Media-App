@@ -39,7 +39,7 @@ function BrandCarousel(): JSX.Element {
     return (
         <div ref={wrapper} className="BrandCarousel">
             {[...Array(10)].map((el, i) => {
-                return <img className="brand-image animate__animated  invisible" style={{ animationDelay: `0.${i}s` }} id={"brand" + i} key={i} alt={"an image of brand " + i} src={require(`../../../Assets/Images/brand/brand-1-${i += 1}.png`)} />
+                return <img className="brand-image animate__animated  invisible" style={{ animationDelay: `0.${i}s` }} id={"brand" + i} key={i} alt={"an image of brand " + i} src={require(`../../../Assets/Images/brand/brand-1-${i += 1}.webp`)} />
             })}
         </div>
     );

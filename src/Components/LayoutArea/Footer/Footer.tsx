@@ -1,10 +1,10 @@
 import "./Footer.css";
-import pinkLogo from "../../../Assets/Images/pink-logo-webies-png.png"
+import pinkLogo from "../../../Assets/Images/pink-logo-webies-png.webp"
 import { Link } from "@mui/material";
 import PhoneEnabledOutlinedIcon from '@mui/icons-material/PhoneEnabledOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import { styled } from "@mui/system";
-import letsTalkImage from "../../../Assets/Images/resources/lets-talk.png"
+import letsTalkImage from "../../../Assets/Images/resources/lets-talk.webp"
 
 const ContactLink = styled(Link)({
     color: "grey",

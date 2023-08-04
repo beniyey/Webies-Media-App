@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { styled } from "@mui/system";
 import { Link, useLocation } from "react-router-dom";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import logo from "../../../Assets/Images/resources/logo.png"
+import logo from "../../../Assets/Images/resources/logo.webp"
 import React, { SyntheticEvent } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 

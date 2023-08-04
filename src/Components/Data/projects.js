@@ -2,37 +2,37 @@ let projectsJSON = [
     {
         name: "Foodies market",
         category: "עיצוב ופיתוח",
-        img: "Foodies-mockup.jpg"
+        img: "Foodies-mockup.webp"
     },
     {
         name: "Havana vacations",
         category: "עיצוב ופיתוח",
-        img: "havana-portfolio.png"
+        img: "havana-portfolio.webp"
     },
     {
         name: "Crispy Pizza",
         category: "עיצוב",
-        img: "crispy-portfolio.png"
+        img: "crispy-portfolio.webp"
     },
     {
         name: "Wallot app",
         category: "עיצוב ומיתוג",
-        img: "WLLOT-portfolio.png"
+        img: "WLLOT-portfolio.webp"
     },
     {
         name: "Euphoria",
         category: "עיצוב ומיתוג",
-        img: "spring.png"
+        img: "spring.webp"
     },
     {
         name: "Playa",
         category: "עיצוב ושיווק",
-        img: "bikini.png"
+        img: "bikini.webp"
     },
     {
         name: "Mood",
         category: "עיצוב ומיתוג מוצר",
-        img: "mood.png"
+        img: "mood.webp"
     },
 ]
 

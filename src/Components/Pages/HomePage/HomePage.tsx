@@ -2,12 +2,12 @@ import { Button } from "@mui/material";
 import "./HomePage.css";
 import { styled } from "@mui/system";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import AboutFloater from "../../../Assets/Images/resources/photo-main-page.png"
-import OfferFloater from "../../../Assets/Images/resources/what-we-offer.png"
+import AboutFloater from "../../../Assets/Images/resources/photo-main-page.webp"
+import OfferFloater from "../../../Assets/Images/resources/what-we-offer.webp"
 import HomePageServiceCard from "../../Cards/HomePageServiceCard/HomePageServiceCard";
-import foodiesMockup from "../../../Assets/Images/portfolio/foodies-mockup-1.jpg"
-import havanaMockup from "../../../Assets/Images/portfolio/havana-mockup-1(1).jpg"
-import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.jpg"
+import foodiesMockup from "../../../Assets/Images/portfolio/foodies-mockup-1.webp"
+import havanaMockup from "../../../Assets/Images/portfolio/havana-mockup-1(1).webp"
+import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.webp"
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
@@ -196,28 +196,29 @@ function HomePage(): JSX.Element {
 
             <Helmet>
                 {/* SEO Meta Tags */}
+                <title>Webies || סטודיו לפיתוח, עיצוב וקידום אתרים</title>
                 <meta name="description" content="We are a web development agency based Israel, offering web design, web development, SEO, web site maintenance, and social media services." />
-                <meta name="keywords" content="web development, design, SEO, maintenance, social media, Tel Aviv, Israel" />
-                <meta name="author" content="Your Web Dev Agency" />
+                <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים,ניהול רשתות חברתיות, ניהול אתרים" />
+                <meta name="author" content="webies media" />
                 <meta name="robots" content="index, follow" />
 
                 {/* OpenGraph Meta Tags */}
-                <meta property="og:title" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta property="og:title" content="webies media - Israel" />
                 <meta property="og:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.youragencywebsite.com/" />
-                <meta property="og:image" content="https://www.youragencywebsite.com/og-image.jpg" /> {/* Replace with your actual image URL */}
-                <meta property="og:image:alt" content="Your Web Dev Agency - Tel Aviv, Israel" />
-                <meta property="og:site_name" content="Your Web Dev Agency" />
+                <meta property="og:url" content="https://www.webies-media.com/" />
+                <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                <meta property="og:image:alt" content="webies media - Tel Aviv, Israel" />
+                <meta property="og:site_name" content="webies media" />
 
                 {/* Twitter Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Your Web Dev Agency - Tel Aviv, Israel" />
+                <meta name="twitter:title" content="Webeis media - Israel" />
                 <meta name="twitter:description" content="We are a web development agency based in Tel Aviv, Israel, offering design, development, SEO, maintenance, and social media services." />
-                <meta name="twitter:image" content="https://www.youragencywebsite.com/twitter-image.jpg" /> {/* Replace with your actual image URL */}
-                <meta name="twitter:image:alt" content="Your Web Dev Agency - Tel Aviv, Israel" />
-                <meta name="twitter:site" content="@youragency" /> {/* Replace with your Twitter handle */}
-                <meta name="twitter:creator" content="@youragency" /> {/* Replace with your Twitter handle */}
+                <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                <meta name="twitter:image:alt" content="webies media - Tel Aviv, Israel" />
+                <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
             </Helmet>
 
             {/* Main Banner */}
@@ -249,7 +250,7 @@ function HomePage(): JSX.Element {
                 <span className="internal-section-spacer"></span>
                 <div className="what-we-do-summary">
                     {[...Array(3)].map((el, i) => {
-                        return <HomePageServiceCard key={i} index={i + 1} img={require(`../../../Assets/Images/shapes/service-i-${i + 1}.png`)} />
+                        return <HomePageServiceCard key={i} index={i + 1} img={require(`../../../Assets/Images/shapes/service-i-${i + 1}.webp`)} />
                     })}
                 </div>
             </section>

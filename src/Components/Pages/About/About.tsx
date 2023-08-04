@@ -1,5 +1,5 @@
 import "./About.css";
-import AboutFloater from "../../../Assets/Images/resources/photo-main-page.png"
+import AboutFloater from "../../../Assets/Images/resources/photo-main-page.webp"
 import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
