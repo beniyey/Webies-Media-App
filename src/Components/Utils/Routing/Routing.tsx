@@ -23,7 +23,7 @@ function Routing(): JSX.Element {
                 <Route path={"/seo"} element={<Seo />} />
                 <Route path={"/maintanance"} element={<Maintanance />} />
                 <Route path={"/social"} element={<Social />} />
-                <Route path="/*" element={<ErrorPage />} />
+                <Route path="/*" element={<HomePage />} />
             </Routes>
         </div>
     );
