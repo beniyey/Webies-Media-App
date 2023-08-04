@@ -60,7 +60,6 @@ export default function Header() {
 
     function onRouteChange(route: string) {
         setActive(route)
-        console.log(route)
     }
 
     function toggleMenu(event?: SyntheticEvent, active: boolean = false) {
@@ -118,7 +117,7 @@ export default function Header() {
             {/* mobile screen */}
             <div className="links mobile ">
                 <MenuIcon fontSize="large" onClick={toggleMenu} sx={{ color: "white", alignItems: "center" }} />
-                <div id="mobile-buttons" className="mobile-buttons animate__animated dropdown">
+                <div id="mobile-buttons" className="mobile-buttons defer animate__animated dropdown">
                     {navItems.map((item, index) => (
                         <NavigationButton className={`route mobile-route animate__animated`} onClick={(event) => { onRouteChange(item.value); toggleMenu(event, true) }} to={item.value} key={item.display} sx={{ animationDelay: `0.${index}s` }}>
                            <span className={`${active == item.value ? "active" : ""}`} >{item.display}</span>
