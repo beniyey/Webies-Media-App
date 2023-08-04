@@ -88,7 +88,7 @@ export default function Seo() {
             </article>
 
             <section className="contact-page">
-                <Contact />
+                <Contact embeded={true}/>
             </section>
         </article>
     )

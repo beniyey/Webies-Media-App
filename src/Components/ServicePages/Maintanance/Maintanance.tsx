@@ -80,7 +80,7 @@ export default function Maintanance() {
             </article>
 
             <section className="contact-page">
-                <Contact />
+                <Contact embeded={true} />
             </section>
 
         </article>

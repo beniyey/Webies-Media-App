@@ -86,7 +86,7 @@ export default function Social() {
             </article>
 
             <section className="contact-page">
-                <Contact />
+                <Contact embeded={true}/>
             </section>
 
         </article>

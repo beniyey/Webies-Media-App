@@ -87,7 +87,7 @@ export default function Development() {
 
 
             <section className="contact-page">
-                <Contact />
+                <Contact embeded={true}/>
             </section>
 
         </article>

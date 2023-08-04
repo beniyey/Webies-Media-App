@@ -22,7 +22,7 @@ const SendButton = styled(Button)({
     }
 })
 
-function Contact(): JSX.Element {
+function Contact(props: { embeded?: boolean }): JSX.Element {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showConfetti, setShowConfetti] = useState(false);
@@ -48,34 +48,37 @@ function Contact(): JSX.Element {
 
     return (
         <div className="Contact parent">
-            <HelmetProvider>
-                <Helmet>
-                    {/* SEO Meta Tags */}
-                    <title>Webies || צור קשר</title>
-                    <meta name="description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
-                    <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
-                    <meta name="author" content="Webies Media" />
-                    <meta name="robots" content="index, follow" />
+            {!props.embeded &&
+                <HelmetProvider>
+                    <Helmet>
+                        {/* SEO Meta Tags */}
+                        <title>Webies || צור קשר</title>
+                        <meta name="description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                        <meta name="keywords" content="פיתוח אתרים, עיצוב אתרים, קידום אתרים, תחזוקת אתרים, ניהול רשתות חברתיות, ניהול אתרים" />
+                        <meta name="author" content="Webies Media" />
+                        <meta name="robots" content="index, follow" />
 
-                    {/* OpenGraph Meta Tags */}
-                    <meta property="og:title" content="Webies Media - צור קשר" />
-                    <meta property="og:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:url" content="https://www.webies-media.com/" />
-                    <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
-                    <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
-                    <meta property="og:site_name" content="Webies Media" />
+                        {/* OpenGraph Meta Tags */}
+                        <meta property="og:title" content="Webies Media - צור קשר" />
+                        <meta property="og:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                        <meta property="og:type" content="website" />
+                        <meta property="og:url" content="https://www.webies-media.com/" />
+                        <meta property="og:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                        <meta property="og:image:alt" content="Webies Media - תל אביב, ישראל" />
+                        <meta property="og:site_name" content="Webies Media" />
 
-                    {/* Twitter Meta Tags */}
-                    <meta name="twitter:card" content="summary_large_image" />
-                    <meta name="twitter:title" content="Webies Media - צור קשר" />
-                    <meta name="twitter:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
-                    <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
-                    <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
-                    <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
-                    <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
-                </Helmet>
-            </HelmetProvider>
+                        {/* Twitter Meta Tags */}
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:title" content="Webies Media - צור קשר" />
+                        <meta name="twitter:description" content="רוצים ליצור קשר? השאירו פרטים ונחזור אליכם בהקדם. אנחנו סטודיו לפיתוח אתרים ועיצוב בישראל, נשמח לעזור ולשמוע מכם." />
+                        <meta name="twitter:image" content="https://www.webies-media.com/static/media/logo.777136740da70324db6f.webp" /> {/* Replace with your actual image URL */}
+                        <meta name="twitter:image:alt" content="Webies Media - תל אביב, ישראל" />
+                        <meta name="twitter:site" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                        <meta name="twitter:creator" content="@webies_media" /> {/* Replace with your Twitter handle */}
+                    </Helmet>
+                </HelmetProvider>
+            }
+
 
             <div className="child overlay"></div>
             <section className="child formData">

@@ -81,7 +81,7 @@ function Portfolio(): JSX.Element {
             </section>
 
             <section className="contact-page">
-                <Contact />
+                <Contact embeded={true}/>
             </section>
         </article>
     );
