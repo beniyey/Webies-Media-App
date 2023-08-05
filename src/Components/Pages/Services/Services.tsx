@@ -8,10 +8,12 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import IntersectionService from "../../../Services/IntersectionService";
+
 
 const RightArrowIcon = styled(ArrowCircleRightIcon)({
     color: "#E95A9C",
@@ -45,10 +47,71 @@ const PinkButton = styled(Button)({
 function Services(): JSX.Element {
 
     const navigate = useNavigate();
+    let intersectionService: IntersectionService;
+
+    const [
+        heroSection,
+        services,
+    ] = [
+            useRef<HTMLDivElement>(null),
+            useRef<HTMLDivElement>(null),
+        ]
+
+    let containersArr = [
+        heroSection,
+        services,
+    ]
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        intersectionService = new IntersectionService(animate, containersArr)
+        intersectionService.init()
     }, [])
+
+    function animate(entry: any, isIntersecting = true) {
+        console.log(entry, "entry")
+        switch (entry.target) {
+            case heroSection.current:
+                if (isIntersecting) {
+                    heroSection.current.querySelector(".top-floater-image")?.classList.remove("animate__fadeOut");
+                    heroSection.current.querySelector(".top-floater-image")?.classList.add("animate__fadeIn");
+                    heroSection.current.querySelector(".top-floater-text")?.classList.remove("animate__fadeOutRight");
+                    heroSection.current.querySelector(".top-floater-text")?.classList.add("animate__fadeInRight");
+                } else {
+                    heroSection.current.querySelector(".top-floater-image")?.classList.remove("animate__fadeIn");
+                    heroSection.current.querySelector(".top-floater-image")?.classList.add("animate__fadeOut");
+                    heroSection.current.querySelector(".top-floater-text")?.classList.remove("animate__fadeOut");
+                    heroSection.current.querySelector(".top-floater-text")?.classList.add("animate__fadeOutRight");
+                }
+                break;
+            case services.current:
+                if (isIntersecting) {
+                    services.current.querySelector(".development")?.classList.remove("animate__fadeOutRight");
+                    services.current.querySelector(".development")?.classList.add("animate__fadeInLeft");
+                    services.current.querySelector(".seo")?.classList.remove("animate__fadeOutLeft");
+                    services.current.querySelector(".seo")?.classList.add("animate__fadeInRight");
+                    services.current.querySelector(".social")?.classList.remove("animate__fadeOutDown");
+                    services.current.querySelector(".social")?.classList.add("animate__fadeInUp");
+                    services.current.querySelector(".maintanance")?.classList.remove("animate__fadeOutDown");
+                    services.current.querySelector(".maintanance")?.classList.add("animate__fadeInUp");
+                    services.current.querySelector(".pink-caption")?.classList.remove("animate__fadeOut");
+                    services.current.querySelector(".pink-caption")?.classList.add("animate__fadeIn");
+                } else {
+                    services.current.querySelector(".development")?.classList.add("animate__fadeOutRight");
+                    services.current.querySelector(".development")?.classList.remove("animate__fadeInLeft");
+                    services.current.querySelector(".seo")?.classList.add("animate__fadeOutLeft");
+                    services.current.querySelector(".seo")?.classList.remove("animate__fadeInRight");
+                    services.current.querySelector(".social")?.classList.add("animate__fadeOutDown");
+                    services.current.querySelector(".social")?.classList.remove("animate__fadeInUp");
+                    services.current.querySelector(".maintanance")?.classList.add("animate__fadeOutDown");
+                    services.current.querySelector(".maintanance")?.classList.remove("animate__fadeInUp");
+                    services.current.querySelector(".pink-caption")?.classList.add("animate__fadeOut");
+                    services.current.querySelector(".pink-caption")?.classList.remove("animate__fadeIn");
+                }
+                break;
+        }
+
+    }
 
     return (
         <article className="Services">
@@ -82,11 +145,11 @@ function Services(): JSX.Element {
             </HelmetProvider>
 
 
-            <section className="top-floater">
-                <div className="top-floater-image">
+            <section ref={heroSection} className="top-floater">
+                <div className="top-floater-image animate__animated">
                     <img loading="lazy" src={OfferFloater} className="" alt="floating image of our team" />
                 </div>
-                <div className="top-floater-text">
+                <div className="top-floater-text animate__animated">
                     <div className="pink-caption">
                         <p>מה אנחנו עושים</p>
                     </div>
@@ -111,15 +174,15 @@ function Services(): JSX.Element {
                 </div>
             </section>
 
-            <section className="services-wrapper">
+            <section ref={services} className="services-wrapper">
                 <div className="services-text">
-                    <div className="pink-caption">
+                    <div className="pink-caption animate__animated">
                         <p>השירותים שלנו</p>
                     </div>
                     <h1 style={{ fontSize: "50px", color: "#270B55" }}>מעלים את העסק שלך לדיגיטל <br /> <span style={{ fontFamily: "fredoka-light" }}>עם הטובים</span> ביותר</h1>
                     <span className="internal-section-spacer"></span>
                     <div className="services-cards">
-                        <div className="service-card development">
+                        <div className="service-card development animate__animated">
                             <div className="service-card-background"></div>
                             <DesignServicesIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
@@ -131,8 +194,8 @@ function Services(): JSX.Element {
                             </p>
                             <Button onClick={() => navigate("/development")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
-                        <div className="service-card seo">
-                            <div className="service-card-background"></div>
+                        <div className="service-card seo animate__animated">
+                            <div className="service-card-background "></div>
                             <DashboardOutlinedIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 קידום אתרים
@@ -142,8 +205,8 @@ function Services(): JSX.Element {
                             </p>
                             <Button onClick={() => navigate("/seo")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
-                        <div className="service-card social">
-                            <div className="service-card-background"></div>
+                        <div className="service-card social animate__animated">
+                            <div className="service-card-background "></div>
                             <EngineeringIcon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 מדיה חברתית
@@ -153,13 +216,13 @@ function Services(): JSX.Element {
                             </p>
                             <Button onClick={() => navigate("/social")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
                         </div>
-                        <div className="service-card">
-                            <div className="service-card-background maintanance"></div>
+                        <div className="service-card animate__animated maintanance">
+                            <div className="service-card-background "></div>
                             <Diversity1Icon sx={{ fontSize: "35px", color: "#E95A9C" }} />
                             <h1>
                                 תחזוקת אתרים
                             </h1>
-                            <p className="service-text">
+                            <p className="service-text animate__animated">
                                 האתר שלך דורש תחזוקה וטיפוח קבועים כדי להבטיח פעילות חלקה ובטיחותית. אנחנו מציעים שירותי תחזוקת אתרים אמינים ומקצועיים, כדי שתוכל להתמקד בעיקרון העסק שלך ולהיות בטוח שאתרך תמיד מתעדכן ופועל בצורה אופטימלית. מכניסים שיפורים, מעדכנים תוכן, וכמובן מסייעים בפתרון תקלות טכניות באופן מהיר ויעיל.
                             </p>
                             <Button onClick={() => navigate("/maintanance")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
@@ -169,7 +232,7 @@ function Services(): JSX.Element {
             </section>
 
             <section className="contact-page">
-                <Contact embeded={true}/>
+                <Contact embeded={true} />
             </section>
         </article>
     );

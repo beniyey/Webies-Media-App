@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import About from "../../Pages/About/About";
 import Contact from "../../Pages/Contact/Contact";
 import HomePage from "../../Pages/HomePage/HomePage";
@@ -23,7 +23,8 @@ function Routing(): JSX.Element {
                 <Route path={"/seo"} element={<Seo />} />
                 <Route path={"/maintanance"} element={<Maintanance />} />
                 <Route path={"/social"} element={<Social />} />
-                <Route path="/*" element={<HomePage />} />
+                <Route path="/" element={<Navigate  to={"/home"}/>} />
+                <Route path="/*" element={<ErrorPage />} />
             </Routes>
         </div>
     );

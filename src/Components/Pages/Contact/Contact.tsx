@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import ArrowBackwardIosIcon from '@mui/icons-material/ArrowBackIosNew';
 import "./Contact.css";
 import Confetti from 'react-confetti'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import emailjs from '@emailjs/browser';
+import IntersectionService from "../../../Services/IntersectionService";
 
 const SendButton = styled(Button)({
     margin: "20px auto",
@@ -27,23 +29,52 @@ function Contact(props: { embeded?: boolean }): JSX.Element {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showConfetti, setShowConfetti] = useState(false);
     const [pieces, setPieces] = useState(200);
+    const form = useRef(null);
+    let intersectionService: IntersectionService;
+
+    const [
+        heroSection,
+        services,
+    ] = [
+            useRef<HTMLDivElement>(null),
+            useRef<HTMLDivElement>(null),
+        ]
+
+    let containersArr = [
+        heroSection,
+        services,
+    ]
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        intersectionService = new IntersectionService(animate, containersArr) 
     }, [])
 
-    function send(data: any) {
-        console.log(data);
-        setShowConfetti(true);
+    function animate() {
+        if (heroSection.current) {
+            heroSection.current.classList.add("animate");
+        }
+        if (services.current) {
+            services.current.classList.add("animate");
+        }
+    }
 
-        // Reset the confetti effect after a certain duration (e.g., 2 seconds)
-        setTimeout(() => {
-            setPieces(0);
-        }, 3000);
-        setTimeout(() => {
-            setShowConfetti(false);
-            setPieces(200);
-        }, 7000);
+    function send(data: any) {
+
+        emailjs.sendForm('service_5thynmv', 'template_6dcc8z6', form.current, 'y4eHmNEhDHtQTu8jz')
+            .then((result) => {
+                setShowConfetti(true);
+                setTimeout(() => {
+                    setPieces(0);
+                }, 3000);
+                setTimeout(() => {
+                    setShowConfetti(false);
+                    setPieces(200);
+                }, 7000);
+            }).catch((error) => {
+                console.log(error.text);
+            });
+
     }
 
     return (
@@ -84,7 +115,7 @@ function Contact(props: { embeded?: boolean }): JSX.Element {
             <section className="child formData">
                 <h1>בואו ניהיה בקשר!</h1>
                 <span>השאירו לנו פרטים והצוות המסור שלנו יחזור אליכם בהקדם</span>
-                <form onSubmit={handleSubmit(send)}>
+                <form ref={form} onSubmit={handleSubmit(send)}>
                     <div className="input-div">
                         <input {...register('email', {
                             required: "שדה חובה, יש למלא אותו לפני שליחה",
@@ -107,13 +138,13 @@ function Contact(props: { embeded?: boolean }): JSX.Element {
                                 value: 70,
                                 message: "שם מלא חייב להכיל לכל היותר 70 תווים"
                             }
-                        })} type="name" placeholder="שם מלא" />
+                        })} type="fullName" placeholder="שם מלא" />
                         {errors.fullName && <span className="error-span">{errors.fullName.message.toString()}</span>}
 
                     </div>
 
                     <div className="input-div">
-                        <input {...register("phoneNumber", {
+                        <input {...register("phone", {
                             required: "שדה חובה, יש למלא אותו לפני שליחה",
                             pattern: {
                                 value: /\+*\d{10,13}/,
@@ -124,7 +155,7 @@ function Contact(props: { embeded?: boolean }): JSX.Element {
                     </div>
 
                     <div className="input-div">
-                        <textarea {...register("message", { maxLength: 300 })} placeholder="הודעה" />
+                        <textarea {...register("msg", { maxLength: 300 })} placeholder="הודעה" />
                         {errors.message && <span className="error-span">{errors.message.message.toString()}</span>}
                     </div>
 

@@ -62,6 +62,8 @@
   width: clamp(200px, 80%, 100%);
   gap: 20px;
   grid-template-areas: "seo seo seo" "design design design" "social social social" "maintaining maintaining maintaining";
+  overflow: hidden;
+  border-radius: 20px;
 }
 .Services .service-card-background {
   z-index: -1;
@@ -75,6 +77,7 @@
   background-size: cover;
   background-position: center;
   filter: blur(1.2px);
+  opacity: 0.1;
 }
 .Services .service-card:nth-of-type(1) {
   position: relative;

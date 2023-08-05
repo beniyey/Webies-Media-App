@@ -79,6 +79,8 @@
         'social social social'
         'maintaining maintaining maintaining'
         ;
+        overflow: hidden;
+        border-radius: 20px;
     }
 
     .service-card-background {
@@ -93,6 +95,7 @@
         background-size: cover;
         background-position: center;
         filter: blur(1.2px);
+        opacity: 0.1;
     }
 
     .service-card:nth-of-type(1) {
