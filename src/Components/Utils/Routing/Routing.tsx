@@ -14,7 +14,7 @@ function Routing(): JSX.Element {
     return (
         <div className="Routing">
             <Routes>
-                <Route path="/home" element={<HomePage />} />
+                <Route path="/" element={<HomePage />} />
                 <Route path={"/about"} element={<About />} />
                 <Route path={"/contact"} element={<Contact />} />
                 <Route path={"/portfolio"} element={<Portfolio />} />
@@ -23,7 +23,6 @@ function Routing(): JSX.Element {
                 <Route path={"/seo"} element={<Seo />} />
                 <Route path={"/maintanance"} element={<Maintanance />} />
                 <Route path={"/social"} element={<Social />} />
-                <Route path="/" element={<Navigate  to={"/home"}/>} />
                 <Route path="/*" element={<ErrorPage />} />
             </Routes>
         </div>

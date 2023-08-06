@@ -87,7 +87,7 @@ export default function Header() {
 
     return (
         <div className="Header">
-            <Link rel="stylesheet" to="/home" >
+            <Link to="/" >
                 <img className="logo" src={logo} />
             </Link>
 
