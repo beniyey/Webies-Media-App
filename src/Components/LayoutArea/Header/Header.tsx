@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 const navItems = [
-    { display: 'בית', value: "home" },
+    { display: 'בית', value: "" },
     { display: 'שירותים', value: "services" },
     { display: 'קצת עלינו', value: "about" },
     { display: 'העבודות שלנו', value: "portfolio" },
