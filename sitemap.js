@@ -2,7 +2,7 @@ const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
 const { Readable } = require('stream');
 
-const hostname = 'https://webies-media.com';
+const hostname = 'https://www.webies-media.com';
 
 const routes = [
   { url: '/', changefreq: 'daily', priority: 1 },
