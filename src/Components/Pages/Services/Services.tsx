@@ -9,7 +9,7 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import IntersectionService from "../../../Services/IntersectionService";
@@ -27,7 +27,7 @@ const RightArrowIcon = styled(ArrowCircleRightIcon)({
     },
 })
 
-const PinkButton = styled(Button)({
+const PinkButton = styled(Link)({
     transition: 'all 0.3s',
     color: '#E95A9C',
     backgroundColor: "transparent",
@@ -170,7 +170,7 @@ function Services(): JSX.Element {
                         ולקבל עזרה והסברים על הפרוייקט שלכם.
                         כמו כן, נשמח לשמוע מכם ולהתאים את הפרוייקט לצרכיך
                         ולצרכי העסק שלכם.                         </div>
-                    <PinkButton onClick={() => navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
+                    <PinkButton to={"/contact"}>דברו איתנו</PinkButton>
                 </div>
             </section>
 
@@ -192,7 +192,7 @@ function Services(): JSX.Element {
                             <p className="service-text">
                                 האתר שלך הוא הפנים הראשון של עסקך בעולם הדיגיטלי. אנחנו מבינים כמה חשוב להציג את העסק שלך בצורה מושכת ומקצועית. באמצעות צוות מומחים בעיצוב ופיתוח, אנחנו נבנה לך אתר אינטרנט מותאם אישית שיענה על כל צרכי העסק שלך. אנחנו מציעים פתרונות טכנולוגיים מתקדמים ומערכות ניהול תוכן ידידותיות, כדי שתוכל לעדכן את האתר שלך בקלות ובנוחות.
                             </p>
-                            <Button onClick={() => navigate("/development")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
+                            <Link to={"/development"}><RightArrowIcon /></Link>
                         </div>
                         <div className="service-card seo animate__animated">
                             <div className="service-card-background "></div>
@@ -203,7 +203,7 @@ function Services(): JSX.Element {
                             <p className="service-text">
                                 אינטרנט מלא באתרים, והידע כיצד לעשות שמציאות תהיה ברורה לגולשים הוא מפתח להצלחה בעולם המקוון. אנחנו מתמחים באופטימיזציה למנועי חיפוש (SEO) ונותנים מענה מקצועי לקידום אתרים. עם שירותי ה-SEO שלנו, אתה יכול להיות בטוח שהאתר שלך יופיע בראש תוצאות החיפוש, מה שיעניק לעסק שלך חשיפה מרבית ותעוזה בקרב לקוחות פוטנציאליים.
                             </p>
-                            <Button onClick={() => navigate("/seo")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
+                            <Link to={"/seo"}><RightArrowIcon /></Link>
                         </div>
                         <div className="service-card social animate__animated">
                             <div className="service-card-background "></div>
@@ -214,7 +214,7 @@ function Services(): JSX.Element {
                             <p className="service-text">
                                 הרשתות החברתיות הפכו לכלי חיוני בקידום עסקים וביצוע קמפיינים שיווקיים יעילים. אנחנו מציעים שירותי ניהול וקידום ברשתות החברתיות כדי להגדיל את הנוכחות הדיגיטלית שלך ולקדם את המותג בקרב הקהל הרחב שלך. בעזרת תכניות ייחודיות, יצירת תוכן מרתק ואסטרטגיות יעילות, אנחנו נעזור לך להגיע לקהל יעד ולפתח קהילה נאמנה שתמכור לך מוצרים ושירותים.
                             </p>
-                            <Button onClick={() => navigate("/social")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
+                            <Link to={"/social"}><RightArrowIcon /></Link>
                         </div>
                         <div className="service-card animate__animated maintanance">
                             <div className="service-card-background "></div>
@@ -225,7 +225,7 @@ function Services(): JSX.Element {
                             <p className="service-text animate__animated">
                                 האתר שלך דורש תחזוקה וטיפוח קבועים כדי להבטיח פעילות חלקה ובטיחותית. אנחנו מציעים שירותי תחזוקת אתרים אמינים ומקצועיים, כדי שתוכל להתמקד בעיקרון העסק שלך ולהיות בטוח שאתרך תמיד מתעדכן ופועל בצורה אופטימלית. מכניסים שיפורים, מעדכנים תוכן, וכמובן מסייעים בפתרון תקלות טכניות באופן מהיר ויעיל.
                             </p>
-                            <Button onClick={() => navigate("/maintanance")} sx={{ borderRadius: "100%" }}><RightArrowIcon /></Button>
+                            <Link to={"/maintanance"}><RightArrowIcon /></Link>
                         </div>
                     </div>
                 </div>

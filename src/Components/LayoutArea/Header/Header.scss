@@ -76,6 +76,7 @@
 
     .links {
         display: flex;
+    
 
         * {
             text-decoration: none;
@@ -141,6 +142,7 @@
         .regular {
             display: flex;
             flex-direction: row-reverse;
+            justify-content: center;
         }
 
         .mobile {

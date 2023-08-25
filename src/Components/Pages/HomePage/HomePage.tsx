@@ -9,16 +9,17 @@ import foodiesMockup from "../../../Assets/Images/portfolio/foodies-mockup-1.web
 import havanaMockup from "../../../Assets/Images/portfolio/havana-mockup-1(1).webp"
 import crispyMockup from "../../../Assets/Images/portfolio/chrispy-pizza-mobig.webp"
 import { useEffect, useRef, Suspense  } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BrandCarousel from "../../Utils/BrandCarousel/BrandCarousel";
 import Contact from "../Contact/Contact";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-const PinkButton = styled(Button)({
+const PinkButton = styled(Link)({
     transition: 'all 0.3s',
     color: 'white',
     backgroundColor: "#E95A9C",
     padding: "10px 30px",
+    textDecoration: "none",
     borderRadius: "30px",
     '&:hover': {
         backgroundColor: "white",
@@ -28,13 +29,14 @@ const PinkButton = styled(Button)({
     }
 })
 
-const MoreInfoButton = styled(Button)({
+const MoreInfoButton = styled(Link)({
     transition: "300ms",
     fontSize: "20px",
     color: "white",
     border: "2px solid #E95A9C",
     padding: "8px 20px",
     borderRadius: "30px",
+    textDecoration: "none",
     '&:hover': {
         transition: "300ms",
         color: "white",
@@ -235,7 +237,7 @@ function HomePage(): JSX.Element {
                         ולהבדיל אתכם מהמתחרים
                     </p>
 
-                    <MoreInfoButton onClick={() => navigate("/services")} variant="outlined" endIcon={<ArrowBackIosIcon />} >גלו עכשיו</MoreInfoButton>
+                    <MoreInfoButton to={"/services"} >גלו עכשיו</MoreInfoButton>
                 </div>
             </section>
             
@@ -317,7 +319,7 @@ function HomePage(): JSX.Element {
                         <img loading="lazy" className="portfolio-image" src={crispyMockup} alt="our project for crispy pizza" />
                     </div>
                 </div>
-                <PinkButton onClick={() => navigate("/portfolio")} className="center" startIcon={<ArrowBackIosIcon />}>לכל הפרוייקטים</PinkButton>
+                <PinkButton to={"/portfolio"} className="center" >לכל הפרוייקטים</PinkButton>
             </section>
 
             <section className="contact-page">

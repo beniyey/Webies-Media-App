@@ -4,11 +4,11 @@ import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-const PinkButton = styled(Button)({
+const PinkButton = styled(Link)({
     transition: 'all 0.3s',
     color: '#E95A9C',
     backgroundColor: "transparent",
@@ -17,6 +17,8 @@ const PinkButton = styled(Button)({
     fontSize: "15px",
     borderRadius: "30px",
     border: "2px solid #E95A9C",
+    display:"inline-block",
+    textDecoration: "none",
     '&:hover': {
         backgroundColor: "#E95A9C",
         color: "white",
@@ -28,11 +30,10 @@ const PinkButton = styled(Button)({
 
 function About(): JSX.Element {
 
-    const navigate = useNavigate();
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+    
     return (
         <article className="About">
 
@@ -88,7 +89,7 @@ function About(): JSX.Element {
                             ולקבל עזרה והסברים על הפרוייקט שלכם.
                             כמו כן, נשמח לשמוע מכם ולהתאים את הפרוייקט לצרכיך
                             ולצרכי העסק שלכם.                         </div>
-                        <PinkButton onClick={() => navigate("/contact")} startIcon={<ArrowBackIosIcon />}>דברו איתנו</PinkButton>
+                        <PinkButton to={"/contact"}>דברו איתנו</PinkButton>
                     </div>
                 </div>
             </section>

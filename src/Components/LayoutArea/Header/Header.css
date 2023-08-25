@@ -116,6 +116,7 @@
   .Header .regular {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
   }
   .Header .mobile {
     display: none;
