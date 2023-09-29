@@ -36,13 +36,15 @@ const PinkButton = styled(Link)({
     fontSize: "15px",
     borderRadius: "30px",
     border: "2px solid #E95A9C",
+    display: "inline-block",
+    textDecoration: "none",
     '&:hover': {
         backgroundColor: "#E95A9C",
         color: "white",
         transition: '0.3s',
         border: "2px solid #E95A9C",
     }
-});
+})
 
 function Services(): JSX.Element {
 
